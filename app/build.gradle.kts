@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.ir.backend.js.compile
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -52,7 +54,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -71,6 +72,8 @@ dependencies {
     implementation(libs.retrofit2.retrofit)
 
     implementation(libs.hilt.android)
+    implementation(project(":domain"))
+    implementation(project(":network"))
     kapt(libs.hilt.android.compiler)
 
     testImplementation(libs.junit)
