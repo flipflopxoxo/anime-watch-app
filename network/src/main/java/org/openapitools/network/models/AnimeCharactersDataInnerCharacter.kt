@@ -31,18 +31,18 @@ data class AnimeCharactersDataInnerCharacter (
 
     /* MyAnimeList ID */
     @SerializedName("mal_id")
-    val malId: kotlin.Int? = null,
+    val malId: Int? = null,
 
     /* MyAnimeList URL */
     @SerializedName("url")
-    val url: kotlin.String? = null,
+    val url: String? = null,
 
     @SerializedName("images")
     val images: CharacterImages? = null,
 
     /* Character Name */
     @SerializedName("name")
-    val name: kotlin.String? = null
+    val name: String? = null
 
 )
 

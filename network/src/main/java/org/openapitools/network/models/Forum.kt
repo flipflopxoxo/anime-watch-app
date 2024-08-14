@@ -27,7 +27,7 @@ import com.google.gson.annotations.SerializedName
 data class Forum (
 
     @SerializedName("data")
-    val `data`: kotlin.collections.List<ForumDataInner>? = null
+    val `data`: List<ForumDataInner>? = null
 
 )
 

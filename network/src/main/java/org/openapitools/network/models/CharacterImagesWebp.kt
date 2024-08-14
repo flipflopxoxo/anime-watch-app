@@ -30,11 +30,11 @@ data class CharacterImagesWebp (
 
     /* Image URL WEBP */
     @SerializedName("image_url")
-    val imageUrl: kotlin.String? = null,
+    val imageUrl: String? = null,
 
     /* Small Image URL WEBP */
     @SerializedName("small_image_url")
-    val smallImageUrl: kotlin.String? = null
+    val smallImageUrl: String? = null
 
 )
 

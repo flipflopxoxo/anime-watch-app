@@ -36,7 +36,7 @@ data class DaterangeProp (
 
     /* Raw parsed string */
     @SerializedName("string")
-    val string: kotlin.String? = null
+    val string: String? = null
 
 )
 

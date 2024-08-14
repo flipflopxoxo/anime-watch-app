@@ -29,7 +29,7 @@ data class CharacterFullVoicesInner (
 
     /* Character's Role */
     @SerializedName("language")
-    val language: kotlin.String? = null,
+    val language: String? = null,
 
     @SerializedName("person")
     val person: PersonMeta? = null

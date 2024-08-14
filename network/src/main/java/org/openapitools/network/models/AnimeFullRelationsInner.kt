@@ -29,10 +29,10 @@ data class AnimeFullRelationsInner (
 
     /* Relation type */
     @SerializedName("relation")
-    val relation: kotlin.String? = null,
+    val relation: String? = null,
 
     @SerializedName("entry")
-    val entry: kotlin.collections.List<MalUrl>? = null
+    val entry: List<MalUrl>? = null
 
 )
 

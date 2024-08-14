@@ -31,7 +31,7 @@ data class ClubsSearch (
     val pagination: PaginationPagination? = null,
 
     @SerializedName("data")
-    val `data`: kotlin.collections.List<Club>? = null
+    val `data`: List<Club>? = null
 
 )
 

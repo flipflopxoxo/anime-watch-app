@@ -58,42 +58,42 @@ data class MangaFull (
 
     /* MyAnimeList ID */
     @SerializedName("mal_id")
-    val malId: kotlin.Int? = null,
+    val malId: Int? = null,
 
     /* MyAnimeList URL */
     @SerializedName("url")
-    val url: kotlin.String? = null,
+    val url: String? = null,
 
     @SerializedName("images")
     val images: MangaImages? = null,
 
     /* Whether the entry is pending approval on MAL or not */
     @SerializedName("approved")
-    val approved: kotlin.Boolean? = null,
+    val approved: Boolean? = null,
 
     /* All Titles */
     @SerializedName("titles")
-    val titles: kotlin.collections.List<Title>? = null,
+    val titles: List<Title>? = null,
 
     /* Title */
     @SerializedName("title")
     @Deprecated(message = "This property is deprecated.")
-    val title: kotlin.String? = null,
+    val title: String? = null,
 
     /* English Title */
     @SerializedName("title_english")
     @Deprecated(message = "This property is deprecated.")
-    val titleEnglish: kotlin.String? = null,
+    val titleEnglish: String? = null,
 
     /* Japanese Title */
     @SerializedName("title_japanese")
     @Deprecated(message = "This property is deprecated.")
-    val titleJapanese: kotlin.String? = null,
+    val titleJapanese: String? = null,
 
     /* Other Titles */
     @SerializedName("title_synonyms")
     @Deprecated(message = "This property is deprecated.")
-    val titleSynonyms: kotlin.collections.List<kotlin.String>? = null,
+    val titleSynonyms: List<kotlin.String>? = null,
 
     /* Manga Type */
     @SerializedName("type")
@@ -101,11 +101,11 @@ data class MangaFull (
 
     /* Chapter count */
     @SerializedName("chapters")
-    val chapters: kotlin.Int? = null,
+    val chapters: Int? = null,
 
     /* Volume count */
     @SerializedName("volumes")
-    val volumes: kotlin.Int? = null,
+    val volumes: Int? = null,
 
     /* Publishing status */
     @SerializedName("status")
@@ -113,66 +113,66 @@ data class MangaFull (
 
     /* Publishing boolean */
     @SerializedName("publishing")
-    val publishing: kotlin.Boolean? = null,
+    val publishing: Boolean? = null,
 
     @SerializedName("published")
     val published: Daterange? = null,
 
     /* Score */
     @SerializedName("score")
-    val score: kotlin.Float? = null,
+    val score: Float? = null,
 
     /* Number of users */
     @SerializedName("scored_by")
-    val scoredBy: kotlin.Int? = null,
+    val scoredBy: Int? = null,
 
     /* Ranking */
     @SerializedName("rank")
-    val rank: kotlin.Int? = null,
+    val rank: Int? = null,
 
     /* Popularity */
     @SerializedName("popularity")
-    val popularity: kotlin.Int? = null,
+    val popularity: Int? = null,
 
     /* Number of users who have added this entry to their list */
     @SerializedName("members")
-    val members: kotlin.Int? = null,
+    val members: Int? = null,
 
     /* Number of users who have favorited this entry */
     @SerializedName("favorites")
-    val favorites: kotlin.Int? = null,
+    val favorites: Int? = null,
 
     /* Synopsis */
     @SerializedName("synopsis")
-    val synopsis: kotlin.String? = null,
+    val synopsis: String? = null,
 
     /* Background */
     @SerializedName("background")
-    val background: kotlin.String? = null,
+    val background: String? = null,
 
     @SerializedName("authors")
-    val authors: kotlin.collections.List<MalUrl>? = null,
+    val authors: List<MalUrl>? = null,
 
     @SerializedName("serializations")
-    val serializations: kotlin.collections.List<MalUrl>? = null,
+    val serializations: List<MalUrl>? = null,
 
     @SerializedName("genres")
-    val genres: kotlin.collections.List<MalUrl>? = null,
+    val genres: List<MalUrl>? = null,
 
     @SerializedName("explicit_genres")
-    val explicitGenres: kotlin.collections.List<MalUrl>? = null,
+    val explicitGenres: List<MalUrl>? = null,
 
     @SerializedName("themes")
-    val themes: kotlin.collections.List<MalUrl>? = null,
+    val themes: List<MalUrl>? = null,
 
     @SerializedName("demographics")
-    val demographics: kotlin.collections.List<MalUrl>? = null,
+    val demographics: List<MalUrl>? = null,
 
     @SerializedName("relations")
-    val relations: kotlin.collections.List<AnimeFullRelationsInner>? = null,
+    val relations: List<AnimeFullRelationsInner>? = null,
 
     @SerializedName("external")
-    val `external`: kotlin.collections.List<AnimeFullExternalInner>? = null
+    val `external`: List<AnimeFullExternalInner>? = null
 
 ) {
 
@@ -181,7 +181,7 @@ data class MangaFull (
      *
      * Values: Manga,Novel,Light_Novel,OneMinusShot,Doujinshi,Manhua,Manhwa,OEL
      */
-    enum class Type(val value: kotlin.String) {
+    enum class Type(val value: String) {
         @SerializedName(value = "Manga") Manga("Manga"),
         @SerializedName(value = "Novel") Novel("Novel"),
         @SerializedName(value = "Light Novel") Light_Novel("Light Novel"),
@@ -196,7 +196,7 @@ data class MangaFull (
      *
      * Values: Finished,Publishing,On_Hiatus,Discontinued,Not_yet_published
      */
-    enum class Status(val value: kotlin.String) {
+    enum class Status(val value: String) {
         @SerializedName(value = "Finished") Finished("Finished"),
         @SerializedName(value = "Publishing") Publishing("Publishing"),
         @SerializedName(value = "On Hiatus") On_Hiatus("On Hiatus"),

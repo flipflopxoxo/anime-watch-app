@@ -30,11 +30,11 @@ data class UserMeta (
 
     /* MyAnimeList Username */
     @SerializedName("username")
-    val username: kotlin.String? = null,
+    val username: String? = null,
 
     /* MyAnimeList Profile URL */
     @SerializedName("url")
-    val url: kotlin.String? = null,
+    val url: String? = null,
 
     @SerializedName("images")
     val images: UserImages? = null

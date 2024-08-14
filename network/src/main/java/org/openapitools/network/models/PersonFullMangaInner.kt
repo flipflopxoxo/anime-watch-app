@@ -29,7 +29,7 @@ data class PersonFullMangaInner (
 
     /* Person's position */
     @SerializedName("position")
-    val position: kotlin.String? = null,
+    val position: String? = null,
 
     @SerializedName("manga")
     val manga: MangaMeta? = null

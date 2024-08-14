@@ -29,11 +29,11 @@ data class UserUpdatesData (
 
     /* Last updated Anime */
     @SerializedName("anime")
-    val anime: kotlin.collections.List<UserUpdatesDataAnimeInner>? = null,
+    val anime: List<UserUpdatesDataAnimeInner>? = null,
 
     /* Last updated Manga */
     @SerializedName("manga")
-    val manga: kotlin.collections.List<UserUpdatesDataMangaInner>? = null
+    val manga: List<UserUpdatesDataMangaInner>? = null
 
 )
 

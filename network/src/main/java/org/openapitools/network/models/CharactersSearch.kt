@@ -31,7 +31,7 @@ data class CharactersSearch (
     val pagination: PaginationPlusPagination? = null,
 
     @SerializedName("data")
-    val `data`: kotlin.collections.List<Character>? = null
+    val `data`: List<Character>? = null
 
 )
 

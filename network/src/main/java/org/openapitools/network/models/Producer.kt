@@ -35,34 +35,34 @@ data class Producer (
 
     /* MyAnimeList ID */
     @SerializedName("mal_id")
-    val malId: kotlin.Int? = null,
+    val malId: Int? = null,
 
     /* MyAnimeList URL */
     @SerializedName("url")
-    val url: kotlin.String? = null,
+    val url: String? = null,
 
     /* All titles */
     @SerializedName("titles")
-    val titles: kotlin.collections.List<Title>? = null,
+    val titles: List<Title>? = null,
 
     @SerializedName("images")
     val images: CommonImages? = null,
 
     /* Producers's member favorites count */
     @SerializedName("favorites")
-    val favorites: kotlin.Int? = null,
+    val favorites: Int? = null,
 
     /* Producers's anime count */
     @SerializedName("count")
-    val count: kotlin.Int? = null,
+    val count: Int? = null,
 
     /* Established Date ISO8601 */
     @SerializedName("established")
-    val established: kotlin.String? = null,
+    val established: String? = null,
 
     /* About the Producer */
     @SerializedName("about")
-    val about: kotlin.String? = null
+    val about: String? = null
 
 )
 

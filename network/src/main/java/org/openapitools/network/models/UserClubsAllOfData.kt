@@ -31,15 +31,15 @@ data class UserClubsAllOfData (
 
     /* MyAnimeList ID */
     @SerializedName("mal_id")
-    val malId: kotlin.Int? = null,
+    val malId: Int? = null,
 
     /* Club Name */
     @SerializedName("name")
-    val name: kotlin.String? = null,
+    val name: String? = null,
 
     /* Club URL */
     @SerializedName("url")
-    val url: kotlin.String? = null
+    val url: String? = null
 
 )
 

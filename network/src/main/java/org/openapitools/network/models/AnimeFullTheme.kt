@@ -29,10 +29,10 @@ import com.google.gson.annotations.SerializedName
 data class AnimeFullTheme (
 
     @SerializedName("openings")
-    val openings: kotlin.collections.List<kotlin.String>? = null,
+    val openings: List<kotlin.String>? = null,
 
     @SerializedName("endings")
-    val endings: kotlin.collections.List<kotlin.String>? = null
+    val endings: List<kotlin.String>? = null
 
 )
 

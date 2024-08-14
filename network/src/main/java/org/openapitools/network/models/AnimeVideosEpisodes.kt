@@ -31,7 +31,7 @@ data class AnimeVideosEpisodes (
     val pagination: PaginationPagination? = null,
 
     @SerializedName("data")
-    val `data`: kotlin.collections.List<AnimeVideosEpisodesAllOfData>? = null
+    val `data`: List<AnimeVideosEpisodesAllOfData>? = null
 
 )
 

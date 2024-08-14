@@ -29,13 +29,13 @@ import com.google.gson.annotations.SerializedName
 data class AnimeVideosData (
 
     @SerializedName("promo")
-    val promo: kotlin.collections.List<AnimeVideosDataPromoInner>? = null,
+    val promo: List<AnimeVideosDataPromoInner>? = null,
 
     @SerializedName("episodes")
-    val episodes: kotlin.collections.List<AnimeVideosDataEpisodesInner>? = null,
+    val episodes: List<AnimeVideosDataEpisodesInner>? = null,
 
     @SerializedName("music_videos")
-    val musicVideos: kotlin.collections.List<AnimeVideosDataMusicVideosInner>? = null
+    val musicVideos: List<AnimeVideosDataMusicVideosInner>? = null
 
 )
 

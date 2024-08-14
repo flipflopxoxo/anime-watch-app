@@ -29,7 +29,7 @@ data class MoreinfoData (
 
     /* Additional information on the entry */
     @SerializedName("moreinfo")
-    val moreinfo: kotlin.String? = null
+    val moreinfo: String? = null
 
 )
 

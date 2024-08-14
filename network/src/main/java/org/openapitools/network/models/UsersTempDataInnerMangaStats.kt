@@ -39,47 +39,47 @@ data class UsersTempDataInnerMangaStats (
 
     /* Number of days spent reading Manga */
     @SerializedName("days_read")
-    val daysRead: kotlin.Float? = null,
+    val daysRead: Float? = null,
 
     /* Mean Score */
     @SerializedName("mean_score")
-    val meanScore: kotlin.Float? = null,
+    val meanScore: Float? = null,
 
     /* Manga Reading */
     @SerializedName("reading")
-    val reading: kotlin.Int? = null,
+    val reading: Int? = null,
 
     /* Manga Completed */
     @SerializedName("completed")
-    val completed: kotlin.Int? = null,
+    val completed: Int? = null,
 
     /* Manga On-Hold */
     @SerializedName("on_hold")
-    val onHold: kotlin.Int? = null,
+    val onHold: Int? = null,
 
     /* Manga Dropped */
     @SerializedName("dropped")
-    val dropped: kotlin.Int? = null,
+    val dropped: Int? = null,
 
     /* Manga Planned to Read */
     @SerializedName("plan_to_read")
-    val planToRead: kotlin.Int? = null,
+    val planToRead: Int? = null,
 
     /* Total Manga entries on User list */
     @SerializedName("total_entries")
-    val totalEntries: kotlin.Int? = null,
+    val totalEntries: Int? = null,
 
     /* Manga re-read */
     @SerializedName("reread")
-    val reread: kotlin.Int? = null,
+    val reread: Int? = null,
 
     /* Number of Manga Chapters Read */
     @SerializedName("chapters_read")
-    val chaptersRead: kotlin.Int? = null,
+    val chaptersRead: Int? = null,
 
     /* Number of Manga Volumes Read */
     @SerializedName("volumes_read")
-    val volumesRead: kotlin.Int? = null
+    val volumesRead: Int? = null
 
 )
 

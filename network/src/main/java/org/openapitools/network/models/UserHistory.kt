@@ -27,7 +27,7 @@ import com.google.gson.annotations.SerializedName
 data class UserHistory (
 
     @SerializedName("data")
-    val `data`: kotlin.collections.List<History>? = null
+    val `data`: List<History>? = null
 
 )
 

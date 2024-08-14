@@ -31,7 +31,7 @@ data class UserClubs (
     val pagination: PaginationPagination? = null,
 
     @SerializedName("data")
-    val `data`: kotlin.collections.List<UserClubsAllOfData>? = null
+    val `data`: List<UserClubsAllOfData>? = null
 
 )
 

@@ -32,19 +32,19 @@ data class MalUrl2 (
 
     /* MyAnimeList ID */
     @SerializedName("mal_id")
-    val malId: kotlin.Int? = null,
+    val malId: Int? = null,
 
     /* Type of resource */
     @SerializedName("type")
-    val type: kotlin.String? = null,
+    val type: String? = null,
 
     /* Resource Name/Title */
     @SerializedName("title")
-    val title: kotlin.String? = null,
+    val title: String? = null,
 
     /* MyAnimeList URL */
     @SerializedName("url")
-    val url: kotlin.String? = null
+    val url: String? = null
 
 )
 

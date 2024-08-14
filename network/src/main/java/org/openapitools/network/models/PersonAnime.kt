@@ -27,7 +27,7 @@ import com.google.gson.annotations.SerializedName
 data class PersonAnime (
 
     @SerializedName("data")
-    val `data`: kotlin.collections.List<PersonAnimeDataInner>? = null
+    val `data`: List<PersonAnimeDataInner>? = null
 
 )
 

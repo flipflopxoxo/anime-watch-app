@@ -32,7 +32,7 @@ data class MangaCharactersDataInner (
 
     /* Character's Role */
     @SerializedName("role")
-    val role: kotlin.String? = null
+    val role: String? = null
 
 )
 

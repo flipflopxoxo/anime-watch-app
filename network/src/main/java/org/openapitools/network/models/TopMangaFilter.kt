@@ -24,7 +24,7 @@ import com.google.gson.annotations.SerializedName
  * Values: publishing,upcoming,bypopularity,favorite
  */
 
-enum class TopMangaFilter(val value: kotlin.String) {
+enum class TopMangaFilter(val value: String) {
 
     @SerializedName(value = "publishing")
     publishing("publishing"),
@@ -45,18 +45,18 @@ enum class TopMangaFilter(val value: kotlin.String) {
      * This solves a problem when the variable name and its value are different, and ensures that
      * the client sends the correct enum values to the server always.
      */
-    override fun toString(): kotlin.String = value
+    override fun toString(): String = value
 
     companion object {
         /**
          * Converts the provided [data] to a [String] on success, null otherwise.
          */
-        fun encode(data: kotlin.Any?): kotlin.String? = if (data is TopMangaFilter) "$data" else null
+        fun encode(data: Any?): String? = if (data is TopMangaFilter) "$data" else null
 
         /**
          * Returns a valid [TopMangaFilter] for [data], null otherwise.
          */
-        fun decode(data: kotlin.Any?): TopMangaFilter? = data?.let {
+        fun decode(data: Any?): TopMangaFilter? = data?.let {
           val normalizedData = "$it".lowercase()
           values().firstOrNull { value ->
             it == value || normalizedData == "$value".lowercase()

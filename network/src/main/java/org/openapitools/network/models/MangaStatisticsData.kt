@@ -34,30 +34,30 @@ data class MangaStatisticsData (
 
     /* Number of users reading the resource */
     @SerializedName("reading")
-    val reading: kotlin.Int? = null,
+    val reading: Int? = null,
 
     /* Number of users who have completed the resource */
     @SerializedName("completed")
-    val completed: kotlin.Int? = null,
+    val completed: Int? = null,
 
     /* Number of users who have put the resource on hold */
     @SerializedName("on_hold")
-    val onHold: kotlin.Int? = null,
+    val onHold: Int? = null,
 
     /* Number of users who have dropped the resource */
     @SerializedName("dropped")
-    val dropped: kotlin.Int? = null,
+    val dropped: Int? = null,
 
     /* Number of users who have planned to read the resource */
     @SerializedName("plan_to_read")
-    val planToRead: kotlin.Int? = null,
+    val planToRead: Int? = null,
 
     /* Total number of users who have the resource added to their lists */
     @SerializedName("total")
-    val total: kotlin.Int? = null,
+    val total: Int? = null,
 
     @SerializedName("scores")
-    val scores: kotlin.collections.List<AnimeStatisticsDataScoresInner>? = null
+    val scores: List<AnimeStatisticsDataScoresInner>? = null
 
 )
 

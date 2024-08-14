@@ -32,19 +32,19 @@ data class AnimeVideosEpisodesAllOfData (
 
     /* MyAnimeList ID or Episode Number */
     @SerializedName("mal_id")
-    val malId: kotlin.Int? = null,
+    val malId: Int? = null,
 
     /* Episode Title */
     @SerializedName("title")
-    val title: kotlin.String? = null,
+    val title: String? = null,
 
     /* Episode Subtitle */
     @SerializedName("episode")
-    val episode: kotlin.String? = null,
+    val episode: String? = null,
 
     /* Episode Page URL */
     @SerializedName("url")
-    val url: kotlin.String? = null,
+    val url: String? = null,
 
     @SerializedName("images")
     val images: CommonImages? = null

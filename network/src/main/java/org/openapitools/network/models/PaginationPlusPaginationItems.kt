@@ -30,13 +30,13 @@ import com.google.gson.annotations.SerializedName
 data class PaginationPlusPaginationItems (
 
     @SerializedName("count")
-    val count: kotlin.Int? = null,
+    val count: Int? = null,
 
     @SerializedName("total")
-    val total: kotlin.Int? = null,
+    val total: Int? = null,
 
     @SerializedName("per_page")
-    val perPage: kotlin.Int? = null
+    val perPage: Int? = null
 
 )
 

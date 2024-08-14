@@ -33,10 +33,10 @@ data class AnimeCharactersDataInner (
 
     /* Character's Role */
     @SerializedName("role")
-    val role: kotlin.String? = null,
+    val role: String? = null,
 
     @SerializedName("voice_actors")
-    val voiceActors: kotlin.collections.List<AnimeCharactersDataInnerVoiceActorsInner>? = null
+    val voiceActors: List<AnimeCharactersDataInnerVoiceActorsInner>? = null
 
 )
 

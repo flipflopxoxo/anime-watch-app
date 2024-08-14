@@ -32,19 +32,19 @@ data class EntryMeta (
 
     /* MyAnimeList ID */
     @SerializedName("mal_id")
-    val malId: kotlin.Int? = null,
+    val malId: Int? = null,
 
     /* MyAnimeList URL */
     @SerializedName("url")
-    val url: kotlin.String? = null,
+    val url: String? = null,
 
     /* Image URL */
     @SerializedName("image_url")
-    val imageUrl: kotlin.String? = null,
+    val imageUrl: String? = null,
 
     /* Entry Name/Title */
     @SerializedName("name")
-    val name: kotlin.String? = null
+    val name: String? = null
 
 )
 

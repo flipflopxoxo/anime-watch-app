@@ -29,7 +29,7 @@ data class CharacterFullMangaInner (
 
     /* Character's Role */
     @SerializedName("role")
-    val role: kotlin.String? = null,
+    val role: String? = null,
 
     @SerializedName("manga")
     val manga: MangaMeta? = null

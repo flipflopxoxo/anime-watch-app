@@ -32,19 +32,19 @@ data class Genre (
 
     /* MyAnimeList ID */
     @SerializedName("mal_id")
-    val malId: kotlin.Int? = null,
+    val malId: Int? = null,
 
     /* Genre Name */
     @SerializedName("name")
-    val name: kotlin.String? = null,
+    val name: String? = null,
 
     /* MyAnimeList URL */
     @SerializedName("url")
-    val url: kotlin.String? = null,
+    val url: String? = null,
 
     /* Genre's entry count */
     @SerializedName("count")
-    val count: kotlin.Int? = null
+    val count: Int? = null
 
 )
 

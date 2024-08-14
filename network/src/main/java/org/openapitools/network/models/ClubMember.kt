@@ -27,7 +27,7 @@ import com.google.gson.annotations.SerializedName
 data class ClubMember (
 
     @SerializedName("data")
-    val `data`: kotlin.collections.List<ClubMemberDataInner>? = null
+    val `data`: List<ClubMemberDataInner>? = null
 
 )
 

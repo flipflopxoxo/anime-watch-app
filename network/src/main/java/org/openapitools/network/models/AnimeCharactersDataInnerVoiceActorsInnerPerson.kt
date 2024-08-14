@@ -30,16 +30,16 @@ import com.google.gson.annotations.SerializedName
 data class AnimeCharactersDataInnerVoiceActorsInnerPerson (
 
     @SerializedName("mal_id")
-    val malId: kotlin.Int? = null,
+    val malId: Int? = null,
 
     @SerializedName("url")
-    val url: kotlin.String? = null,
+    val url: String? = null,
 
     @SerializedName("images")
     val images: PeopleImages? = null,
 
     @SerializedName("name")
-    val name: kotlin.String? = null
+    val name: String? = null
 
 )
 

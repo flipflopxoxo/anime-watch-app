@@ -67,11 +67,11 @@ data class AnimeFull (
 
     /* MyAnimeList ID */
     @SerializedName("mal_id")
-    val malId: kotlin.Int? = null,
+    val malId: Int? = null,
 
     /* MyAnimeList URL */
     @SerializedName("url")
-    val url: kotlin.String? = null,
+    val url: String? = null,
 
     @SerializedName("images")
     val images: AnimeImages? = null,
@@ -81,31 +81,31 @@ data class AnimeFull (
 
     /* Whether the entry is pending approval on MAL or not */
     @SerializedName("approved")
-    val approved: kotlin.Boolean? = null,
+    val approved: Boolean? = null,
 
     /* All titles */
     @SerializedName("titles")
-    val titles: kotlin.collections.List<Title>? = null,
+    val titles: List<Title>? = null,
 
     /* Title */
     @SerializedName("title")
     @Deprecated(message = "This property is deprecated.")
-    val title: kotlin.String? = null,
+    val title: String? = null,
 
     /* English Title */
     @SerializedName("title_english")
     @Deprecated(message = "This property is deprecated.")
-    val titleEnglish: kotlin.String? = null,
+    val titleEnglish: String? = null,
 
     /* Japanese Title */
     @SerializedName("title_japanese")
     @Deprecated(message = "This property is deprecated.")
-    val titleJapanese: kotlin.String? = null,
+    val titleJapanese: String? = null,
 
     /* Other Titles */
     @SerializedName("title_synonyms")
     @Deprecated(message = "This property is deprecated.")
-    val titleSynonyms: kotlin.collections.List<kotlin.String>? = null,
+    val titleSynonyms: List<kotlin.String>? = null,
 
     /* Anime Type */
     @SerializedName("type")
@@ -113,11 +113,11 @@ data class AnimeFull (
 
     /* Original Material/Source adapted from */
     @SerializedName("source")
-    val source: kotlin.String? = null,
+    val source: String? = null,
 
     /* Episode count */
     @SerializedName("episodes")
-    val episodes: kotlin.Int? = null,
+    val episodes: Int? = null,
 
     /* Airing status */
     @SerializedName("status")
@@ -125,14 +125,14 @@ data class AnimeFull (
 
     /* Airing boolean */
     @SerializedName("airing")
-    val airing: kotlin.Boolean? = null,
+    val airing: Boolean? = null,
 
     @SerializedName("aired")
     val aired: Daterange? = null,
 
     /* Parsed raw duration */
     @SerializedName("duration")
-    val duration: kotlin.String? = null,
+    val duration: String? = null,
 
     /* Anime audience rating */
     @SerializedName("rating")
@@ -140,35 +140,35 @@ data class AnimeFull (
 
     /* Score */
     @SerializedName("score")
-    val score: kotlin.Float? = null,
+    val score: Float? = null,
 
     /* Number of users */
     @SerializedName("scored_by")
-    val scoredBy: kotlin.Int? = null,
+    val scoredBy: Int? = null,
 
     /* Ranking */
     @SerializedName("rank")
-    val rank: kotlin.Int? = null,
+    val rank: Int? = null,
 
     /* Popularity */
     @SerializedName("popularity")
-    val popularity: kotlin.Int? = null,
+    val popularity: Int? = null,
 
     /* Number of users who have added this entry to their list */
     @SerializedName("members")
-    val members: kotlin.Int? = null,
+    val members: Int? = null,
 
     /* Number of users who have favorited this entry */
     @SerializedName("favorites")
-    val favorites: kotlin.Int? = null,
+    val favorites: Int? = null,
 
     /* Synopsis */
     @SerializedName("synopsis")
-    val synopsis: kotlin.String? = null,
+    val synopsis: String? = null,
 
     /* Background */
     @SerializedName("background")
-    val background: kotlin.String? = null,
+    val background: String? = null,
 
     /* Season */
     @SerializedName("season")
@@ -176,43 +176,43 @@ data class AnimeFull (
 
     /* Year */
     @SerializedName("year")
-    val year: kotlin.Int? = null,
+    val year: Int? = null,
 
     @SerializedName("broadcast")
     val broadcast: Broadcast? = null,
 
     @SerializedName("producers")
-    val producers: kotlin.collections.List<MalUrl>? = null,
+    val producers: List<MalUrl>? = null,
 
     @SerializedName("licensors")
-    val licensors: kotlin.collections.List<MalUrl>? = null,
+    val licensors: List<MalUrl>? = null,
 
     @SerializedName("studios")
-    val studios: kotlin.collections.List<MalUrl>? = null,
+    val studios: List<MalUrl>? = null,
 
     @SerializedName("genres")
-    val genres: kotlin.collections.List<MalUrl>? = null,
+    val genres: List<MalUrl>? = null,
 
     @SerializedName("explicit_genres")
-    val explicitGenres: kotlin.collections.List<MalUrl>? = null,
+    val explicitGenres: List<MalUrl>? = null,
 
     @SerializedName("themes")
-    val themes: kotlin.collections.List<MalUrl>? = null,
+    val themes: List<MalUrl>? = null,
 
     @SerializedName("demographics")
-    val demographics: kotlin.collections.List<MalUrl>? = null,
+    val demographics: List<MalUrl>? = null,
 
     @SerializedName("relations")
-    val relations: kotlin.collections.List<AnimeFullRelationsInner>? = null,
+    val relations: List<AnimeFullRelationsInner>? = null,
 
     @SerializedName("theme")
     val theme: AnimeFullTheme? = null,
 
     @SerializedName("external")
-    val `external`: kotlin.collections.List<AnimeFullExternalInner>? = null,
+    val `external`: List<AnimeFullExternalInner>? = null,
 
     @SerializedName("streaming")
-    val streaming: kotlin.collections.List<AnimeFullExternalInner>? = null
+    val streaming: List<AnimeFullExternalInner>? = null
 
 ) {
 
@@ -221,7 +221,7 @@ data class AnimeFull (
      *
      * Values: TV,OVA,Movie,Special,ONA,Music
      */
-    enum class Type(val value: kotlin.String) {
+    enum class Type(val value: String) {
         @SerializedName(value = "TV") TV("TV"),
         @SerializedName(value = "OVA") OVA("OVA"),
         @SerializedName(value = "Movie") Movie("Movie"),
@@ -234,7 +234,7 @@ data class AnimeFull (
      *
      * Values: Finished_Airing,Currently_Airing,Not_yet_aired
      */
-    enum class Status(val value: kotlin.String) {
+    enum class Status(val value: String) {
         @SerializedName(value = "Finished Airing") Finished_Airing("Finished Airing"),
         @SerializedName(value = "Currently Airing") Currently_Airing("Currently Airing"),
         @SerializedName(value = "Not yet aired") Not_yet_aired("Not yet aired");
@@ -244,7 +244,7 @@ data class AnimeFull (
      *
      * Values: G_Minus_All_Ages,PG_Minus_Children,PGMinus13_Minus_Teens_13_or_older,R_Minus_17Plus_Left_ParenthesisViolence_Ampersand_profanityRight_Parenthesis,RPlus_Minus_Mild_Nudity,Rx_Minus_Hentai
      */
-    enum class Rating(val value: kotlin.String) {
+    enum class Rating(val value: String) {
         @SerializedName(value = "G - All Ages") G_Minus_All_Ages("G - All Ages"),
         @SerializedName(value = "PG - Children") PG_Minus_Children("PG - Children"),
         @SerializedName(value = "PG-13 - Teens 13 or older") PGMinus13_Minus_Teens_13_or_older("PG-13 - Teens 13 or older"),
@@ -257,7 +257,7 @@ data class AnimeFull (
      *
      * Values: summer,winter,spring,fall
      */
-    enum class Season(val value: kotlin.String) {
+    enum class Season(val value: String) {
         @SerializedName(value = "summer") summer("summer"),
         @SerializedName(value = "winter") winter("winter"),
         @SerializedName(value = "spring") spring("spring"),

@@ -32,19 +32,19 @@ data class Magazine (
 
     /* MyAnimeList ID */
     @SerializedName("mal_id")
-    val malId: kotlin.Int? = null,
+    val malId: Int? = null,
 
     /* Magazine Name */
     @SerializedName("name")
-    val name: kotlin.String? = null,
+    val name: String? = null,
 
     /* MyAnimeList URL */
     @SerializedName("url")
-    val url: kotlin.String? = null,
+    val url: String? = null,
 
     /* Magazine's manga count */
     @SerializedName("count")
-    val count: kotlin.Int? = null
+    val count: Int? = null
 
 )
 

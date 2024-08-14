@@ -31,7 +31,7 @@ data class Magazines (
     val pagination: PaginationPagination? = null,
 
     @SerializedName("data")
-    val `data`: kotlin.collections.List<Magazine>? = null
+    val `data`: List<Magazine>? = null
 
 )
 

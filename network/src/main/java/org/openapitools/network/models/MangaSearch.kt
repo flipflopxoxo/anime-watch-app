@@ -31,7 +31,7 @@ data class MangaSearch (
     val pagination: PaginationPlusPagination? = null,
 
     @SerializedName("data")
-    val `data`: kotlin.collections.List<Manga>? = null
+    val `data`: List<Manga>? = null
 
 )
 

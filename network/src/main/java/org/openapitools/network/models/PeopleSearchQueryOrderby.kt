@@ -24,7 +24,7 @@ import com.google.gson.annotations.SerializedName
  * Values: mal_id,name,birthday,favorites
  */
 
-enum class PeopleSearchQueryOrderby(val value: kotlin.String) {
+enum class PeopleSearchQueryOrderby(val value: String) {
 
     @SerializedName(value = "mal_id")
     MAL_ID("mal_id"),
@@ -45,18 +45,18 @@ enum class PeopleSearchQueryOrderby(val value: kotlin.String) {
      * This solves a problem when the variable name and its value are different, and ensures that
      * the client sends the correct enum values to the server always.
      */
-    override fun toString(): kotlin.String = value
+    override fun toString(): String = value
 
     companion object {
         /**
          * Converts the provided [data] to a [String] on success, null otherwise.
          */
-        fun encode(data: kotlin.Any?): kotlin.String? = if (data is PeopleSearchQueryOrderby) "$data" else null
+        fun encode(data: Any?): String? = if (data is PeopleSearchQueryOrderby) "$data" else null
 
         /**
          * Returns a valid [PeopleSearchQueryOrderby] for [data], null otherwise.
          */
-        fun decode(data: kotlin.Any?): PeopleSearchQueryOrderby? = data?.let {
+        fun decode(data: Any?): PeopleSearchQueryOrderby? = data?.let {
           val normalizedData = "$it".lowercase()
           values().firstOrNull { value ->
             it == value || normalizedData == "$value".lowercase()

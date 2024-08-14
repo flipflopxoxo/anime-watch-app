@@ -31,7 +31,7 @@ data class MangaNews (
     val pagination: PaginationPagination? = null,
 
     @SerializedName("data")
-    val `data`: kotlin.collections.List<NewsDataInner>? = null
+    val `data`: List<NewsDataInner>? = null
 
 )
 

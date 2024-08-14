@@ -27,7 +27,7 @@ import com.google.gson.annotations.SerializedName
 data class PersonVoiceActingRoles (
 
     @SerializedName("data")
-    val `data`: kotlin.collections.List<PersonFullVoicesInner>? = null
+    val `data`: List<PersonFullVoicesInner>? = null
 
 )
 

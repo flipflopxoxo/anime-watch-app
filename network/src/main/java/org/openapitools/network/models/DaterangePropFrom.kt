@@ -31,15 +31,15 @@ data class DaterangePropFrom (
 
     /* Day */
     @SerializedName("day")
-    val day: kotlin.Int? = null,
+    val day: Int? = null,
 
     /* Month */
     @SerializedName("month")
-    val month: kotlin.Int? = null,
+    val month: Int? = null,
 
     /* Year */
     @SerializedName("year")
-    val year: kotlin.Int? = null
+    val year: Int? = null
 
 )
 

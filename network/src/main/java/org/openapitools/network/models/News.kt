@@ -27,7 +27,7 @@ import com.google.gson.annotations.SerializedName
 data class News (
 
     @SerializedName("data")
-    val `data`: kotlin.collections.List<NewsDataInner>? = null
+    val `data`: List<NewsDataInner>? = null
 
 )
 

@@ -27,7 +27,7 @@ import com.google.gson.annotations.SerializedName
 data class ExternalLinks (
 
     @SerializedName("data")
-    val `data`: kotlin.collections.List<AnimeFullExternalInner>? = null
+    val `data`: List<AnimeFullExternalInner>? = null
 
 )
 

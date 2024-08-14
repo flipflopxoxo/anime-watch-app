@@ -37,26 +37,26 @@ data class UserUpdatesDataMangaInner (
     val entry: MangaMeta? = null,
 
     @SerializedName("score")
-    val score: kotlin.Int? = null,
+    val score: Int? = null,
 
     @SerializedName("status")
-    val status: kotlin.String? = null,
+    val status: String? = null,
 
     @SerializedName("chapters_read")
-    val chaptersRead: kotlin.Int? = null,
+    val chaptersRead: Int? = null,
 
     @SerializedName("chapters_total")
-    val chaptersTotal: kotlin.Int? = null,
+    val chaptersTotal: Int? = null,
 
     @SerializedName("volumes_read")
-    val volumesRead: kotlin.Int? = null,
+    val volumesRead: Int? = null,
 
     @SerializedName("volumes_total")
-    val volumesTotal: kotlin.Int? = null,
+    val volumesTotal: Int? = null,
 
     /* ISO8601 format */
     @SerializedName("date")
-    val date: kotlin.String? = null
+    val date: String? = null
 
 )
 

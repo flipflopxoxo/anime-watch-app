@@ -27,7 +27,7 @@ import com.google.gson.annotations.SerializedName
 data class GetAnimeRelations200Response (
 
     @SerializedName("data")
-    val `data`: kotlin.collections.List<Relation>? = null
+    val `data`: List<Relation>? = null
 
 )
 

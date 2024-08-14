@@ -24,7 +24,7 @@ import com.google.gson.annotations.SerializedName
  * Values: desc,asc
  */
 
-enum class SearchQuerySort(val value: kotlin.String) {
+enum class SearchQuerySort(val value: String) {
 
     @SerializedName(value = "desc")
     desc("desc"),
@@ -39,18 +39,18 @@ enum class SearchQuerySort(val value: kotlin.String) {
      * This solves a problem when the variable name and its value are different, and ensures that
      * the client sends the correct enum values to the server always.
      */
-    override fun toString(): kotlin.String = value
+    override fun toString(): String = value
 
     companion object {
         /**
          * Converts the provided [data] to a [String] on success, null otherwise.
          */
-        fun encode(data: kotlin.Any?): kotlin.String? = if (data is SearchQuerySort) "$data" else null
+        fun encode(data: Any?): String? = if (data is SearchQuerySort) "$data" else null
 
         /**
          * Returns a valid [SearchQuerySort] for [data], null otherwise.
          */
-        fun decode(data: kotlin.Any?): SearchQuerySort? = data?.let {
+        fun decode(data: Any?): SearchQuerySort? = data?.let {
           val normalizedData = "$it".lowercase()
           values().firstOrNull { value ->
             it == value || normalizedData == "$value".lowercase()

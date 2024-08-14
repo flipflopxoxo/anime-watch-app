@@ -24,7 +24,7 @@ import com.google.gson.annotations.SerializedName
  * Values: manga,novel,lightnovel,oneshot,doujin,manhwa,manhua
  */
 
-enum class MangaSearchQueryType(val value: kotlin.String) {
+enum class MangaSearchQueryType(val value: String) {
 
     @SerializedName(value = "manga")
     manga("manga"),
@@ -54,18 +54,18 @@ enum class MangaSearchQueryType(val value: kotlin.String) {
      * This solves a problem when the variable name and its value are different, and ensures that
      * the client sends the correct enum values to the server always.
      */
-    override fun toString(): kotlin.String = value
+    override fun toString(): String = value
 
     companion object {
         /**
          * Converts the provided [data] to a [String] on success, null otherwise.
          */
-        fun encode(data: kotlin.Any?): kotlin.String? = if (data is MangaSearchQueryType) "$data" else null
+        fun encode(data: Any?): String? = if (data is MangaSearchQueryType) "$data" else null
 
         /**
          * Returns a valid [MangaSearchQueryType] for [data], null otherwise.
          */
-        fun decode(data: kotlin.Any?): MangaSearchQueryType? = data?.let {
+        fun decode(data: Any?): MangaSearchQueryType? = data?.let {
           val normalizedData = "$it".lowercase()
           values().firstOrNull { value ->
             it == value || normalizedData == "$value".lowercase()

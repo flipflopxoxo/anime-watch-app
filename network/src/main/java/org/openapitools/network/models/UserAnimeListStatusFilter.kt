@@ -24,7 +24,7 @@ import com.google.gson.annotations.SerializedName
  * Values: all,watching,completed,onhold,dropped,plantowatch
  */
 
-enum class UserAnimeListStatusFilter(val value: kotlin.String) {
+enum class UserAnimeListStatusFilter(val value: String) {
 
     @SerializedName(value = "all")
     all("all"),
@@ -51,18 +51,18 @@ enum class UserAnimeListStatusFilter(val value: kotlin.String) {
      * This solves a problem when the variable name and its value are different, and ensures that
      * the client sends the correct enum values to the server always.
      */
-    override fun toString(): kotlin.String = value
+    override fun toString(): String = value
 
     companion object {
         /**
          * Converts the provided [data] to a [String] on success, null otherwise.
          */
-        fun encode(data: kotlin.Any?): kotlin.String? = if (data is UserAnimeListStatusFilter) "$data" else null
+        fun encode(data: Any?): String? = if (data is UserAnimeListStatusFilter) "$data" else null
 
         /**
          * Returns a valid [UserAnimeListStatusFilter] for [data], null otherwise.
          */
-        fun decode(data: kotlin.Any?): UserAnimeListStatusFilter? = data?.let {
+        fun decode(data: Any?): UserAnimeListStatusFilter? = data?.let {
           val normalizedData = "$it".lowercase()
           values().firstOrNull { value ->
             it == value || normalizedData == "$value".lowercase()

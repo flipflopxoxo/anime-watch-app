@@ -41,55 +41,55 @@ data class PersonFull (
 
     /* MyAnimeList ID */
     @SerializedName("mal_id")
-    val malId: kotlin.Int? = null,
+    val malId: Int? = null,
 
     /* MyAnimeList URL */
     @SerializedName("url")
-    val url: kotlin.String? = null,
+    val url: String? = null,
 
     /* Person's website URL */
     @SerializedName("website_url")
-    val websiteUrl: kotlin.String? = null,
+    val websiteUrl: String? = null,
 
     @SerializedName("images")
     val images: PeopleImages? = null,
 
     /* Name */
     @SerializedName("name")
-    val name: kotlin.String? = null,
+    val name: String? = null,
 
     /* Given Name */
     @SerializedName("given_name")
-    val givenName: kotlin.String? = null,
+    val givenName: String? = null,
 
     /* Family Name */
     @SerializedName("family_name")
-    val familyName: kotlin.String? = null,
+    val familyName: String? = null,
 
     /* Other Names */
     @SerializedName("alternate_names")
-    val alternateNames: kotlin.collections.List<kotlin.String>? = null,
+    val alternateNames: List<kotlin.String>? = null,
 
     /* Birthday Date ISO8601 */
     @SerializedName("birthday")
-    val birthday: kotlin.String? = null,
+    val birthday: String? = null,
 
     /* Number of users who have favorited this entry */
     @SerializedName("favorites")
-    val favorites: kotlin.Int? = null,
+    val favorites: Int? = null,
 
     /* Biography */
     @SerializedName("about")
-    val about: kotlin.String? = null,
+    val about: String? = null,
 
     @SerializedName("anime")
-    val anime: kotlin.collections.List<PersonAnimeDataInner>? = null,
+    val anime: List<PersonAnimeDataInner>? = null,
 
     @SerializedName("manga")
-    val manga: kotlin.collections.List<PersonFullMangaInner>? = null,
+    val manga: List<PersonFullMangaInner>? = null,
 
     @SerializedName("voices")
-    val voices: kotlin.collections.List<PersonFullVoicesInner>? = null
+    val voices: List<PersonFullVoicesInner>? = null
 
 )
 

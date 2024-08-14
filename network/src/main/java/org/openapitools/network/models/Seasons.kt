@@ -27,7 +27,7 @@ import com.google.gson.annotations.SerializedName
 data class Seasons (
 
     @SerializedName("data")
-    val `data`: kotlin.collections.List<SeasonsDataInner>? = null
+    val `data`: List<SeasonsDataInner>? = null
 
 )
 

@@ -30,11 +30,11 @@ data class UserById (
 
     /* MyAnimeList URL */
     @SerializedName("url")
-    val url: kotlin.String? = null,
+    val url: String? = null,
 
     /* MyAnimeList Username */
     @SerializedName("username")
-    val username: kotlin.String? = null
+    val username: String? = null
 
 )
 

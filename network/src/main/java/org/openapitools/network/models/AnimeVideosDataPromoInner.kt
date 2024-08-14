@@ -29,7 +29,7 @@ data class AnimeVideosDataPromoInner (
 
     /* Title */
     @SerializedName("title")
-    val title: kotlin.String? = null,
+    val title: String? = null,
 
     @SerializedName("trailer")
     val trailer: Trailer? = null

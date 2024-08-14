@@ -31,7 +31,7 @@ data class AnimeCharactersDataInnerVoiceActorsInner (
     val person: AnimeCharactersDataInnerVoiceActorsInnerPerson? = null,
 
     @SerializedName("language")
-    val language: kotlin.String? = null
+    val language: String? = null
 
 )
 

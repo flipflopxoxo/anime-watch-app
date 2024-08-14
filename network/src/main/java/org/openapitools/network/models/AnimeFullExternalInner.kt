@@ -29,10 +29,10 @@ import com.google.gson.annotations.SerializedName
 data class AnimeFullExternalInner (
 
     @SerializedName("name")
-    val name: kotlin.String? = null,
+    val name: String? = null,
 
     @SerializedName("url")
-    val url: kotlin.String? = null
+    val url: String? = null
 
 )
 

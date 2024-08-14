@@ -31,7 +31,7 @@ data class Producers (
     val pagination: PaginationPagination? = null,
 
     @SerializedName("data")
-    val `data`: kotlin.collections.List<Producer>? = null
+    val `data`: List<Producer>? = null
 
 )
 

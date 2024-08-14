@@ -32,19 +32,19 @@ data class Broadcast (
 
     /* Day of the week */
     @SerializedName("day")
-    val day: kotlin.String? = null,
+    val day: String? = null,
 
     /* Time in 24 hour format */
     @SerializedName("time")
-    val time: kotlin.String? = null,
+    val time: String? = null,
 
     /* Timezone (Tz Database format https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) */
     @SerializedName("timezone")
-    val timezone: kotlin.String? = null,
+    val timezone: String? = null,
 
     /* Raw parsed broadcast string */
     @SerializedName("string")
-    val string: kotlin.String? = null
+    val string: String? = null
 
 )
 

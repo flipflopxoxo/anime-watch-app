@@ -15,8 +15,6 @@
 
 package org.openapitools.network.models
 
-import org.openapitools.network.models.AnyOfLessThanAnimeMetaCommaMangaMetaGreaterThan
-
 import com.google.gson.annotations.SerializedName
 
 /**
@@ -33,15 +31,15 @@ data class RecommendationsAllOfData (
 
     /* MAL IDs of recommendations is both of the MAL ID's with a `-` delimiter */
     @SerializedName("mal_id")
-    val malId: kotlin.String? = null,
+    val malId: String? = null,
 
     /* Array of 2 entries that are being recommended to each other */
     @SerializedName("entry")
-    val entry: kotlin.collections.List<AnyOfLessThanAnimeMetaCommaMangaMetaGreaterThan>? = null,
+    val entry: List<Recommendation>? = null,
 
     /* Recommendation context provided by the user */
     @SerializedName("content")
-    val content: kotlin.String? = null,
+    val content: String? = null,
 
     @SerializedName("user")
     val user: UserById? = null

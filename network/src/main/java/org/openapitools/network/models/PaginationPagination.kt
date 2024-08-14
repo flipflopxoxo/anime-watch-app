@@ -29,10 +29,10 @@ import com.google.gson.annotations.SerializedName
 data class PaginationPagination (
 
     @SerializedName("last_visible_page")
-    val lastVisiblePage: kotlin.Int? = null,
+    val lastVisiblePage: Int? = null,
 
     @SerializedName("has_next_page")
-    val hasNextPage: kotlin.Boolean? = null
+    val hasNextPage: Boolean? = null
 
 )
 

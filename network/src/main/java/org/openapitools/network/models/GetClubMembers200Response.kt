@@ -31,7 +31,7 @@ data class GetClubMembers200Response (
     val pagination: PaginationPagination? = null,
 
     @SerializedName("data")
-    val `data`: kotlin.collections.List<ClubMemberDataInner>? = null
+    val `data`: List<ClubMemberDataInner>? = null
 
 )
 

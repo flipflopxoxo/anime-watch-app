@@ -31,18 +31,18 @@ data class UsersSearchAllOfData (
 
     /* MyAnimeList URL */
     @SerializedName("url")
-    val url: kotlin.String? = null,
+    val url: String? = null,
 
     /* MyAnimeList Username */
     @SerializedName("username")
-    val username: kotlin.String? = null,
+    val username: String? = null,
 
     @SerializedName("images")
     val images: UserImages? = null,
 
     /* Last Online Date ISO8601 */
     @SerializedName("last_online")
-    val lastOnline: kotlin.String? = null
+    val lastOnline: String? = null
 
 )
 

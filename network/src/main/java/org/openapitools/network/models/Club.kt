@@ -35,22 +35,22 @@ data class Club (
 
     /* MyAnimeList ID */
     @SerializedName("mal_id")
-    val malId: kotlin.Int? = null,
+    val malId: Int? = null,
 
     /* Club name */
     @SerializedName("name")
-    val name: kotlin.String? = null,
+    val name: String? = null,
 
     /* Club URL */
     @SerializedName("url")
-    val url: kotlin.String? = null,
+    val url: String? = null,
 
     @SerializedName("images")
     val images: CommonImages? = null,
 
     /* Number of club members */
     @SerializedName("members")
-    val members: kotlin.Int? = null,
+    val members: Int? = null,
 
     /* Club Category */
     @SerializedName("category")
@@ -58,7 +58,7 @@ data class Club (
 
     /* Date Created ISO8601 */
     @SerializedName("created")
-    val created: kotlin.String? = null,
+    val created: String? = null,
 
     /* Club access */
     @SerializedName("access")
@@ -71,7 +71,7 @@ data class Club (
      *
      * Values: actors_Ampersand_artists,anime,characters,cities_Ampersand_neighborhoods,companies,conventions,games,japan,manga,music,others,schools
      */
-    enum class Category(val value: kotlin.String) {
+    enum class Category(val value: String) {
         @SerializedName(value = "actors & artists") actors_Ampersand_artists("actors & artists"),
         @SerializedName(value = "anime") anime("anime"),
         @SerializedName(value = "characters") characters("characters"),
@@ -90,7 +90,7 @@ data class Club (
      *
      * Values: `public`,`private`,secret
      */
-    enum class Access(val value: kotlin.String) {
+    enum class Access(val value: String) {
         @SerializedName(value = "public") `public`("public"),
         @SerializedName(value = "private") `private`("private"),
         @SerializedName(value = "secret") secret("secret");

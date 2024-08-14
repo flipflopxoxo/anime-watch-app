@@ -30,11 +30,11 @@ data class ClubMemberDataInner (
 
     /* User's username */
     @SerializedName("username")
-    val username: kotlin.String? = null,
+    val username: String? = null,
 
     /* User URL */
     @SerializedName("url")
-    val url: kotlin.String? = null,
+    val url: String? = null,
 
     @SerializedName("images")
     val images: UserImages? = null

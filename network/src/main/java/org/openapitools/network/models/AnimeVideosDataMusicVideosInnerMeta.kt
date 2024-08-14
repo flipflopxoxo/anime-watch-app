@@ -29,10 +29,10 @@ import com.google.gson.annotations.SerializedName
 data class AnimeVideosDataMusicVideosInnerMeta (
 
     @SerializedName("title")
-    val title: kotlin.String? = null,
+    val title: String? = null,
 
     @SerializedName("author")
-    val author: kotlin.String? = null
+    val author: String? = null
 
 )
 

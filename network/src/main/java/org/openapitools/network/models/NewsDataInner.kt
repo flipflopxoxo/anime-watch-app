@@ -37,42 +37,42 @@ data class NewsDataInner (
 
     /* MyAnimeList ID */
     @SerializedName("mal_id")
-    val malId: kotlin.Int? = null,
+    val malId: Int? = null,
 
     /* MyAnimeList URL */
     @SerializedName("url")
-    val url: kotlin.String? = null,
+    val url: String? = null,
 
     /* Title */
     @SerializedName("title")
-    val title: kotlin.String? = null,
+    val title: String? = null,
 
     /* Post Date ISO8601 */
     @SerializedName("date")
-    val date: kotlin.String? = null,
+    val date: String? = null,
 
     /* Author MyAnimeList Username */
     @SerializedName("author_username")
-    val authorUsername: kotlin.String? = null,
+    val authorUsername: String? = null,
 
     /* Author Profile URL */
     @SerializedName("author_url")
-    val authorUrl: kotlin.String? = null,
+    val authorUrl: String? = null,
 
     /* Forum topic URL */
     @SerializedName("forum_url")
-    val forumUrl: kotlin.String? = null,
+    val forumUrl: String? = null,
 
     @SerializedName("images")
     val images: CommonImages? = null,
 
     /* Comment count */
     @SerializedName("comments")
-    val comments: kotlin.Int? = null,
+    val comments: Int? = null,
 
     /* Excerpt */
     @SerializedName("excerpt")
-    val excerpt: kotlin.String? = null
+    val excerpt: String? = null
 
 )
 

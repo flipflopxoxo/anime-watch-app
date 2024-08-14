@@ -30,7 +30,7 @@ data class PersonFullVoicesInner (
 
     /* Person's Character's role in the anime */
     @SerializedName("role")
-    val role: kotlin.String? = null,
+    val role: String? = null,
 
     @SerializedName("anime")
     val anime: AnimeMeta? = null,

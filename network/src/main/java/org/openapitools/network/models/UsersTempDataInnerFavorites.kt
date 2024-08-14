@@ -31,19 +31,19 @@ data class UsersTempDataInnerFavorites (
 
     /* Favorite Anime */
     @SerializedName("anime")
-    val anime: kotlin.collections.List<EntryMeta>? = null,
+    val anime: List<EntryMeta>? = null,
 
     /* Favorite Manga */
     @SerializedName("manga")
-    val manga: kotlin.collections.List<EntryMeta>? = null,
+    val manga: List<EntryMeta>? = null,
 
     /* Favorite Characters */
     @SerializedName("characters")
-    val characters: kotlin.collections.List<EntryMeta>? = null,
+    val characters: List<EntryMeta>? = null,
 
     /* Favorite People */
     @SerializedName("people")
-    val people: kotlin.collections.List<EntryMeta>? = null
+    val people: List<EntryMeta>? = null
 
 )
 

@@ -29,11 +29,11 @@ data class Relation (
 
     /* Relation type */
     @SerializedName("relation")
-    val relation: kotlin.String? = null,
+    val relation: String? = null,
 
     /* Related entries */
     @SerializedName("entry")
-    val entry: kotlin.collections.List<MalUrl>? = null
+    val entry: List<MalUrl>? = null
 
 )
 

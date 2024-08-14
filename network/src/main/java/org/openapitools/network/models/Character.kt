@@ -35,34 +35,34 @@ data class Character (
 
     /* MyAnimeList ID */
     @SerializedName("mal_id")
-    val malId: kotlin.Int? = null,
+    val malId: Int? = null,
 
     /* MyAnimeList URL */
     @SerializedName("url")
-    val url: kotlin.String? = null,
+    val url: String? = null,
 
     @SerializedName("images")
     val images: CharacterImages? = null,
 
     /* Name */
     @SerializedName("name")
-    val name: kotlin.String? = null,
+    val name: String? = null,
 
     /* Name */
     @SerializedName("name_kanji")
-    val nameKanji: kotlin.String? = null,
+    val nameKanji: String? = null,
 
     /* Other Names */
     @SerializedName("nicknames")
-    val nicknames: kotlin.collections.List<kotlin.String>? = null,
+    val nicknames: List<kotlin.String>? = null,
 
     /* Number of users who have favorited this entry */
     @SerializedName("favorites")
-    val favorites: kotlin.Int? = null,
+    val favorites: Int? = null,
 
     /* Biography */
     @SerializedName("about")
-    val about: kotlin.String? = null
+    val about: String? = null
 
 )
 

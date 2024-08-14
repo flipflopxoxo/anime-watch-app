@@ -27,7 +27,7 @@ import com.google.gson.annotations.SerializedName
 data class MangaPictures (
 
     @SerializedName("data")
-    val `data`: kotlin.collections.List<MangaImages>? = null
+    val `data`: List<MangaImages>? = null
 
 )
 

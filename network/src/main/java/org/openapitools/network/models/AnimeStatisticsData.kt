@@ -34,30 +34,30 @@ data class AnimeStatisticsData (
 
     /* Number of users watching the resource */
     @SerializedName("watching")
-    val watching: kotlin.Int? = null,
+    val watching: Int? = null,
 
     /* Number of users who have completed the resource */
     @SerializedName("completed")
-    val completed: kotlin.Int? = null,
+    val completed: Int? = null,
 
     /* Number of users who have put the resource on hold */
     @SerializedName("on_hold")
-    val onHold: kotlin.Int? = null,
+    val onHold: Int? = null,
 
     /* Number of users who have dropped the resource */
     @SerializedName("dropped")
-    val dropped: kotlin.Int? = null,
+    val dropped: Int? = null,
 
     /* Number of users who have planned to watch the resource */
     @SerializedName("plan_to_watch")
-    val planToWatch: kotlin.Int? = null,
+    val planToWatch: Int? = null,
 
     /* Total number of users who have the resource added to their lists */
     @SerializedName("total")
-    val total: kotlin.Int? = null,
+    val total: Int? = null,
 
     @SerializedName("scores")
-    val scores: kotlin.collections.List<AnimeStatisticsDataScoresInner>? = null
+    val scores: List<AnimeStatisticsDataScoresInner>? = null
 
 )
 

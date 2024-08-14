@@ -35,20 +35,20 @@ data class UserUpdatesDataAnimeInner (
     val entry: AnimeMeta? = null,
 
     @SerializedName("score")
-    val score: kotlin.Int? = null,
+    val score: Int? = null,
 
     @SerializedName("status")
-    val status: kotlin.String? = null,
+    val status: String? = null,
 
     @SerializedName("episodes_seen")
-    val episodesSeen: kotlin.Int? = null,
+    val episodesSeen: Int? = null,
 
     @SerializedName("episodes_total")
-    val episodesTotal: kotlin.Int? = null,
+    val episodesTotal: Int? = null,
 
     /* ISO8601 format */
     @SerializedName("date")
-    val date: kotlin.String? = null
+    val date: String? = null
 
 )
 

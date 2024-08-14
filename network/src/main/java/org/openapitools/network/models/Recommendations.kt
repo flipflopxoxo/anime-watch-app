@@ -31,7 +31,7 @@ data class Recommendations (
     val pagination: PaginationPagination? = null,
 
     @SerializedName("data")
-    val `data`: kotlin.collections.List<RecommendationsAllOfData>? = null
+    val `data`: List<RecommendationsAllOfData>? = null
 
 )
 

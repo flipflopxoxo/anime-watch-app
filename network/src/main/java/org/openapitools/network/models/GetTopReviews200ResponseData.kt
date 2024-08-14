@@ -31,7 +31,7 @@ data class GetTopReviews200ResponseData (
     val pagination: PaginationPagination? = null,
 
     @SerializedName("data")
-    val `data`: kotlin.collections.List<GetTopReviews200ResponseDataAllOfDataInner>? = null
+    val `data`: List<GetTopReviews200ResponseDataAllOfDataInner>? = null
 
 )
 

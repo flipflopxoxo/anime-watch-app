@@ -36,23 +36,23 @@ data class AnimeUserupdatesAllOfData (
 
     /* User Score */
     @SerializedName("score")
-    val score: kotlin.Int? = null,
+    val score: Int? = null,
 
     /* User list status */
     @SerializedName("status")
-    val status: kotlin.String? = null,
+    val status: String? = null,
 
     /* Number of episodes seen */
     @SerializedName("episodes_seen")
-    val episodesSeen: kotlin.Int? = null,
+    val episodesSeen: Int? = null,
 
     /* Total number of episodes */
     @SerializedName("episodes_total")
-    val episodesTotal: kotlin.Int? = null,
+    val episodesTotal: Int? = null,
 
     /* Last updated date ISO8601 */
     @SerializedName("date")
-    val date: kotlin.String? = null
+    val date: String? = null
 
 )
 

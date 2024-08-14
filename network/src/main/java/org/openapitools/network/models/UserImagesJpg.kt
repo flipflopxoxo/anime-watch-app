@@ -29,7 +29,7 @@ data class UserImagesJpg (
 
     /* Image URL JPG */
     @SerializedName("image_url")
-    val imageUrl: kotlin.String? = null
+    val imageUrl: String? = null
 
 )
 

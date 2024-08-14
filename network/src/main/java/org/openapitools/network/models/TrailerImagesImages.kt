@@ -33,23 +33,23 @@ data class TrailerImagesImages (
 
     /* Default Image Size URL (120x90) */
     @SerializedName("image_url")
-    val imageUrl: kotlin.String? = null,
+    val imageUrl: String? = null,
 
     /* Small Image Size URL (640x480) */
     @SerializedName("small_image_url")
-    val smallImageUrl: kotlin.String? = null,
+    val smallImageUrl: String? = null,
 
     /* Medium Image Size URL (320x180) */
     @SerializedName("medium_image_url")
-    val mediumImageUrl: kotlin.String? = null,
+    val mediumImageUrl: String? = null,
 
     /* Large Image Size URL (480x360) */
     @SerializedName("large_image_url")
-    val largeImageUrl: kotlin.String? = null,
+    val largeImageUrl: String? = null,
 
     /* Maximum Image Size URL (1280x720) */
     @SerializedName("maximum_image_url")
-    val maximumImageUrl: kotlin.String? = null
+    val maximumImageUrl: String? = null
 
 )
 

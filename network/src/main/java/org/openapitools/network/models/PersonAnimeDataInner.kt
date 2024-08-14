@@ -29,7 +29,7 @@ data class PersonAnimeDataInner (
 
     /* Person's position */
     @SerializedName("position")
-    val position: kotlin.String? = null,
+    val position: String? = null,
 
     @SerializedName("anime")
     val anime: AnimeMeta? = null

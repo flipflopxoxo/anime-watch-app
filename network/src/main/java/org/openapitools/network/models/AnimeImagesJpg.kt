@@ -31,15 +31,15 @@ data class AnimeImagesJpg (
 
     /* Image URL JPG */
     @SerializedName("image_url")
-    val imageUrl: kotlin.String? = null,
+    val imageUrl: String? = null,
 
     /* Small Image URL JPG */
     @SerializedName("small_image_url")
-    val smallImageUrl: kotlin.String? = null,
+    val smallImageUrl: String? = null,
 
     /* Image URL JPG */
     @SerializedName("large_image_url")
-    val largeImageUrl: kotlin.String? = null
+    val largeImageUrl: String? = null
 
 )
 

@@ -38,43 +38,43 @@ data class UserProfileFullStatisticsAnime (
 
     /* Number of days spent watching Anime */
     @SerializedName("days_watched")
-    val daysWatched: kotlin.Float? = null,
+    val daysWatched: Float? = null,
 
     /* Mean Score */
     @SerializedName("mean_score")
-    val meanScore: kotlin.Float? = null,
+    val meanScore: Float? = null,
 
     /* Anime Watching */
     @SerializedName("watching")
-    val watching: kotlin.Int? = null,
+    val watching: Int? = null,
 
     /* Anime Completed */
     @SerializedName("completed")
-    val completed: kotlin.Int? = null,
+    val completed: Int? = null,
 
     /* Anime On-Hold */
     @SerializedName("on_hold")
-    val onHold: kotlin.Int? = null,
+    val onHold: Int? = null,
 
     /* Anime Dropped */
     @SerializedName("dropped")
-    val dropped: kotlin.Int? = null,
+    val dropped: Int? = null,
 
     /* Anime Planned to Watch */
     @SerializedName("plan_to_watch")
-    val planToWatch: kotlin.Int? = null,
+    val planToWatch: Int? = null,
 
     /* Total Anime entries on User list */
     @SerializedName("total_entries")
-    val totalEntries: kotlin.Int? = null,
+    val totalEntries: Int? = null,
 
     /* Anime re-watched */
     @SerializedName("rewatched")
-    val rewatched: kotlin.Int? = null,
+    val rewatched: Int? = null,
 
     /* Number of Anime Episodes Watched */
     @SerializedName("episodes_watched")
-    val episodesWatched: kotlin.Int? = null
+    val episodesWatched: Int? = null
 
 )
 

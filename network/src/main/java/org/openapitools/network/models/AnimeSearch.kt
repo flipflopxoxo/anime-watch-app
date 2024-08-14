@@ -31,7 +31,7 @@ data class AnimeSearch (
     val pagination: PaginationPlusPagination? = null,
 
     @SerializedName("data")
-    val `data`: kotlin.collections.List<Anime>? = null
+    val `data`: List<Anime>? = null
 
 )
 

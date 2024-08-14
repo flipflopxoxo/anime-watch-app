@@ -30,11 +30,11 @@ data class Title (
 
     /* Title type */
     @SerializedName("type")
-    val type: kotlin.String? = null,
+    val type: String? = null,
 
     /* Title value */
     @SerializedName("title")
-    val title: kotlin.String? = null
+    val title: String? = null
 
 )
 

@@ -1,6 +1,6 @@
 package org.openapitools.network.models
 
-data class AnyOfLessThanAnimeMetaCommaMangaMetaGreaterThan(
+data class Recommendation(
     val animeMeta: AnimeMeta?,
     val mangaMeta: MangaMeta?,
 )

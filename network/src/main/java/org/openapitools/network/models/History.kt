@@ -33,11 +33,11 @@ data class History (
 
     /* Number of episodes/chapters watched/read */
     @SerializedName("increment")
-    val increment: kotlin.Int? = null,
+    val increment: Int? = null,
 
     /* Date ISO8601 */
     @SerializedName("date")
-    val date: kotlin.String? = null
+    val date: String? = null
 
 )
 

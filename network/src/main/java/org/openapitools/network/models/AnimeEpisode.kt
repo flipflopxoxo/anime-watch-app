@@ -38,43 +38,43 @@ data class AnimeEpisode (
 
     /* MyAnimeList ID */
     @SerializedName("mal_id")
-    val malId: kotlin.Int? = null,
+    val malId: Int? = null,
 
     /* MyAnimeList URL */
     @SerializedName("url")
-    val url: kotlin.String? = null,
+    val url: String? = null,
 
     /* Title */
     @SerializedName("title")
-    val title: kotlin.String? = null,
+    val title: String? = null,
 
     /* Title Japanese */
     @SerializedName("title_japanese")
-    val titleJapanese: kotlin.String? = null,
+    val titleJapanese: String? = null,
 
     /* title_romanji */
     @SerializedName("title_romanji")
-    val titleRomanji: kotlin.String? = null,
+    val titleRomanji: String? = null,
 
     /* Episode duration in seconds */
     @SerializedName("duration")
-    val duration: kotlin.Int? = null,
+    val duration: Int? = null,
 
     /* Aired Date ISO8601 */
     @SerializedName("aired")
-    val aired: kotlin.String? = null,
+    val aired: String? = null,
 
     /* Filler episode */
     @SerializedName("filler")
-    val filler: kotlin.Boolean? = null,
+    val filler: Boolean? = null,
 
     /* Recap episode */
     @SerializedName("recap")
-    val recap: kotlin.Boolean? = null,
+    val recap: Boolean? = null,
 
     /* Episode Synopsis */
     @SerializedName("synopsis")
-    val synopsis: kotlin.String? = null
+    val synopsis: String? = null
 
 )
 

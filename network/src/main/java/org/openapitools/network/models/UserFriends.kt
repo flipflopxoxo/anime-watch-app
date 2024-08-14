@@ -31,7 +31,7 @@ data class UserFriends (
     val pagination: PaginationPagination? = null,
 
     @SerializedName("data")
-    val `data`: kotlin.collections.List<UserFriendsAllOfDataInner>? = null
+    val `data`: List<UserFriendsAllOfDataInner>? = null
 
 )
 

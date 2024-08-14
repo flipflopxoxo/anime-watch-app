@@ -31,15 +31,15 @@ data class AnimeStatisticsDataScoresInner (
 
     /* Scoring value */
     @SerializedName("score")
-    val score: kotlin.Int? = null,
+    val score: Int? = null,
 
     /* Number of votes for this score */
     @SerializedName("votes")
-    val votes: kotlin.Int? = null,
+    val votes: Int? = null,
 
     /* Percentage of votes for this score */
     @SerializedName("percentage")
-    val percentage: kotlin.Float? = null
+    val percentage: Float? = null
 
 )
 

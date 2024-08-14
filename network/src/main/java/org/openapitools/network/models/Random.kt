@@ -27,7 +27,7 @@ import com.google.gson.annotations.SerializedName
 data class Random (
 
     @SerializedName("data")
-    val `data`: kotlin.collections.List<RandomDataInner>? = null
+    val `data`: List<RandomDataInner>? = null
 
 )
 

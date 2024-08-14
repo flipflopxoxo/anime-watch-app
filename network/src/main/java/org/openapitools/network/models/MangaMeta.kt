@@ -31,18 +31,18 @@ data class MangaMeta (
 
     /* MyAnimeList ID */
     @SerializedName("mal_id")
-    val malId: kotlin.Int? = null,
+    val malId: Int? = null,
 
     /* MyAnimeList URL */
     @SerializedName("url")
-    val url: kotlin.String? = null,
+    val url: String? = null,
 
     @SerializedName("images")
     val images: MangaImages? = null,
 
     /* Entry title */
     @SerializedName("title")
-    val title: kotlin.String? = null
+    val title: String? = null
 
 )
 

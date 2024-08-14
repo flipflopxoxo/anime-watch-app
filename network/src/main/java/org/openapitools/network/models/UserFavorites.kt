@@ -31,19 +31,19 @@ data class UserFavorites (
 
     /* Favorite Anime */
     @SerializedName("anime")
-    val anime: kotlin.collections.List<UserFavoritesAnimeInner>? = null,
+    val anime: List<UserFavoritesAnimeInner>? = null,
 
     /* Favorite Manga */
     @SerializedName("manga")
-    val manga: kotlin.collections.List<UserFavoritesMangaInner>? = null,
+    val manga: List<UserFavoritesMangaInner>? = null,
 
     /* Favorite Characters */
     @SerializedName("characters")
-    val characters: kotlin.collections.List<UserFavoritesCharactersInner>? = null,
+    val characters: List<UserFavoritesCharactersInner>? = null,
 
     /* Favorite People */
     @SerializedName("people")
-    val people: kotlin.collections.List<CharacterMeta>? = null
+    val people: List<CharacterMeta>? = null
 
 )
 

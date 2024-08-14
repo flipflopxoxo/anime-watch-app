@@ -29,7 +29,7 @@ data class UserImagesWebp (
 
     /* Image URL WEBP */
     @SerializedName("image_url")
-    val imageUrl: kotlin.String? = null
+    val imageUrl: String? = null
 
 )
 

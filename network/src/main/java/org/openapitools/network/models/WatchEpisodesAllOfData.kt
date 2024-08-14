@@ -33,11 +33,11 @@ data class WatchEpisodesAllOfData (
 
     /* Recent Episodes (max 2 listed) */
     @SerializedName("episodes")
-    val episodes: kotlin.collections.List<WatchEpisodesAllOfEpisodes>? = null,
+    val episodes: List<WatchEpisodesAllOfEpisodes>? = null,
 
     /* Region Locked Episode */
     @SerializedName("region_locked")
-    val regionLocked: kotlin.Boolean? = null
+    val regionLocked: Boolean? = null
 
 )
 

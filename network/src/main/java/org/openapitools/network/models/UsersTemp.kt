@@ -27,7 +27,7 @@ import com.google.gson.annotations.SerializedName
 data class UsersTemp (
 
     @SerializedName("data")
-    val `data`: kotlin.collections.List<UsersTempDataInner>? = null
+    val `data`: List<UsersTempDataInner>? = null
 
 )
 

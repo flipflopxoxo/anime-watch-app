@@ -39,46 +39,46 @@ data class AnimeReviewsAllOfDataInner (
 
     /* MyAnimeList ID */
     @SerializedName("mal_id")
-    val malId: kotlin.Int? = null,
+    val malId: Int? = null,
 
     /* MyAnimeList review URL */
     @SerializedName("url")
-    val url: kotlin.String? = null,
+    val url: String? = null,
 
     /* Entry type */
     @SerializedName("type")
-    val type: kotlin.String? = null,
+    val type: String? = null,
 
     @SerializedName("reactions")
     val reactions: MangaReviewReactions? = null,
 
     /* Review created date ISO8601 */
     @SerializedName("date")
-    val date: kotlin.String? = null,
+    val date: String? = null,
 
     /* Review content */
     @SerializedName("review")
-    val review: kotlin.String? = null,
+    val review: String? = null,
 
     /* Number of user votes on the Review */
     @SerializedName("score")
-    val score: kotlin.Int? = null,
+    val score: Int? = null,
 
     /* Review tags */
     @SerializedName("tags")
-    val tags: kotlin.collections.List<kotlin.String>? = null,
+    val tags: List<kotlin.String>? = null,
 
     /* The review contains spoiler */
     @SerializedName("is_spoiler")
-    val isSpoiler: kotlin.Boolean? = null,
+    val isSpoiler: Boolean? = null,
 
     /* The review was made before the entry was completed */
     @SerializedName("is_preliminary")
-    val isPreliminary: kotlin.Boolean? = null,
+    val isPreliminary: Boolean? = null,
 
     /* Number of episodes watched */
     @SerializedName("episodes_watched")
-    val episodesWatched: kotlin.Int? = null,
+    val episodesWatched: Int? = null,
 
     @SerializedName("user")
     val user: UserMeta? = null

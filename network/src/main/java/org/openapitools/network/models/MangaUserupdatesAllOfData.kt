@@ -38,31 +38,31 @@ data class MangaUserupdatesAllOfData (
 
     /* User Score */
     @SerializedName("score")
-    val score: kotlin.Int? = null,
+    val score: Int? = null,
 
     /* User list status */
     @SerializedName("status")
-    val status: kotlin.String? = null,
+    val status: String? = null,
 
     /* Number of volumes read */
     @SerializedName("volumes_read")
-    val volumesRead: kotlin.Int? = null,
+    val volumesRead: Int? = null,
 
     /* Total number of volumes */
     @SerializedName("volumes_total")
-    val volumesTotal: kotlin.Int? = null,
+    val volumesTotal: Int? = null,
 
     /* Number of chapters read */
     @SerializedName("chapters_read")
-    val chaptersRead: kotlin.Int? = null,
+    val chaptersRead: Int? = null,
 
     /* Total number of chapters */
     @SerializedName("chapters_total")
-    val chaptersTotal: kotlin.Int? = null,
+    val chaptersTotal: Int? = null,
 
     /* Last updated date ISO8601 */
     @SerializedName("date")
-    val date: kotlin.String? = null
+    val date: String? = null
 
 )
 

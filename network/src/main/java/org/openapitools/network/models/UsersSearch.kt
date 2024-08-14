@@ -31,7 +31,7 @@ data class UsersSearch (
     val pagination: PaginationPagination? = null,
 
     @SerializedName("data")
-    val `data`: kotlin.collections.List<UsersSearchAllOfData>? = null
+    val `data`: List<UsersSearchAllOfData>? = null
 
 )
 

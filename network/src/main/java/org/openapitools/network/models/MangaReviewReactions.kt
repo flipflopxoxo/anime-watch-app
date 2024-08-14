@@ -36,35 +36,35 @@ data class MangaReviewReactions (
 
     /* Overall reaction count */
     @SerializedName("overall")
-    val overall: kotlin.Int? = null,
+    val overall: Int? = null,
 
     /* Nice reaction count */
     @SerializedName("nice")
-    val nice: kotlin.Int? = null,
+    val nice: Int? = null,
 
     /* Love it reaction count */
     @SerializedName("love_it")
-    val loveIt: kotlin.Int? = null,
+    val loveIt: Int? = null,
 
     /* Funny reaction count */
     @SerializedName("funny")
-    val funny: kotlin.Int? = null,
+    val funny: Int? = null,
 
     /* Confusing reaction count */
     @SerializedName("confusing")
-    val confusing: kotlin.Int? = null,
+    val confusing: Int? = null,
 
     /* Informative reaction count */
     @SerializedName("informative")
-    val informative: kotlin.Int? = null,
+    val informative: Int? = null,
 
     /* Well written reaction count */
     @SerializedName("well_written")
-    val wellWritten: kotlin.Int? = null,
+    val wellWritten: Int? = null,
 
     /* Creative reaction count */
     @SerializedName("creative")
-    val creative: kotlin.Int? = null
+    val creative: Int? = null
 
 )
 

@@ -30,11 +30,11 @@ data class SeasonsDataInner (
 
     /* Year */
     @SerializedName("year")
-    val year: kotlin.Int? = null,
+    val year: Int? = null,
 
     /* List of available seasons */
     @SerializedName("seasons")
-    val seasons: kotlin.collections.List<kotlin.String>? = null
+    val seasons: List<kotlin.String>? = null
 
 )
 

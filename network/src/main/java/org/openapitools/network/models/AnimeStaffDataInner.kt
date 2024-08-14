@@ -32,7 +32,7 @@ data class AnimeStaffDataInner (
 
     /* Staff Positions */
     @SerializedName("positions")
-    val positions: kotlin.collections.List<kotlin.String>? = null
+    val positions: List<kotlin.String>? = null
 
 )
 

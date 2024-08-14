@@ -30,11 +30,11 @@ data class Daterange (
 
     /* Date ISO8601 */
     @SerializedName("from")
-    val from: kotlin.String? = null,
+    val from: String? = null,
 
     /* Date ISO8601 */
     @SerializedName("to")
-    val to: kotlin.String? = null,
+    val to: String? = null,
 
     @SerializedName("prop")
     val prop: DaterangeProp? = null

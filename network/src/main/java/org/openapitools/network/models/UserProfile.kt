@@ -36,38 +36,38 @@ data class UserProfile (
 
     /* MyAnimeList ID */
     @SerializedName("mal_id")
-    val malId: kotlin.Int? = null,
+    val malId: Int? = null,
 
     /* MyAnimeList Username */
     @SerializedName("username")
-    val username: kotlin.String? = null,
+    val username: String? = null,
 
     /* MyAnimeList URL */
     @SerializedName("url")
-    val url: kotlin.String? = null,
+    val url: String? = null,
 
     @SerializedName("images")
     val images: UserImages? = null,
 
     /* Last Online Date ISO8601 */
     @SerializedName("last_online")
-    val lastOnline: kotlin.String? = null,
+    val lastOnline: String? = null,
 
     /* User Gender */
     @SerializedName("gender")
-    val gender: kotlin.String? = null,
+    val gender: String? = null,
 
     /* Birthday Date ISO8601 */
     @SerializedName("birthday")
-    val birthday: kotlin.String? = null,
+    val birthday: String? = null,
 
     /* Location */
     @SerializedName("location")
-    val location: kotlin.String? = null,
+    val location: String? = null,
 
     /* Joined Date ISO8601 */
     @SerializedName("joined")
-    val joined: kotlin.String? = null
+    val joined: String? = null
 
 )
 

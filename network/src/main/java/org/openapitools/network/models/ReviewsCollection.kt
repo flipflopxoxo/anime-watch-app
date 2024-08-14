@@ -27,7 +27,7 @@ import com.google.gson.annotations.SerializedName
 data class ReviewsCollection (
 
     @SerializedName("data")
-    val `data`: kotlin.collections.List<ReviewsCollectionDataInner>? = null
+    val `data`: List<ReviewsCollectionDataInner>? = null
 
 )
 

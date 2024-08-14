@@ -40,38 +40,38 @@ data class UsersTempDataInner (
 
     /* MyAnimeList ID */
     @SerializedName("mal_id")
-    val malId: kotlin.Int? = null,
+    val malId: Int? = null,
 
     /* MyAnimeList Username */
     @SerializedName("username")
-    val username: kotlin.String? = null,
+    val username: String? = null,
 
     /* MyAnimeList URL */
     @SerializedName("url")
-    val url: kotlin.String? = null,
+    val url: String? = null,
 
     @SerializedName("images")
     val images: UsersTempDataInnerImages? = null,
 
     /* Last Online Date ISO8601 */
     @SerializedName("last_online")
-    val lastOnline: kotlin.String? = null,
+    val lastOnline: String? = null,
 
     /* User Gender */
     @SerializedName("gender")
-    val gender: kotlin.String? = null,
+    val gender: String? = null,
 
     /* Birthday Date ISO8601 */
     @SerializedName("birthday")
-    val birthday: kotlin.String? = null,
+    val birthday: String? = null,
 
     /* Location */
     @SerializedName("location")
-    val location: kotlin.String? = null,
+    val location: String? = null,
 
     /* Joined Date ISO8601 */
     @SerializedName("joined")
-    val joined: kotlin.String? = null,
+    val joined: String? = null,
 
     @SerializedName("anime_stats")
     val animeStats: UsersTempDataInnerAnimeStats? = null,
@@ -84,7 +84,7 @@ data class UsersTempDataInner (
 
     /* User About. NOTE: About information is customizable by users through BBCode on MyAnimeList. This means users can add multimedia content, different text sizes, etc. Due to this freeform, Jikan returns parsed HTML. Validate on your end! */
     @SerializedName("about")
-    val about: kotlin.String? = null
+    val about: String? = null
 
 )
 

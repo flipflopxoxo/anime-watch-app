@@ -35,31 +35,31 @@ data class ForumDataInner (
 
     /* MyAnimeList ID */
     @SerializedName("mal_id")
-    val malId: kotlin.Int? = null,
+    val malId: Int? = null,
 
     /* MyAnimeList URL */
     @SerializedName("url")
-    val url: kotlin.String? = null,
+    val url: String? = null,
 
     /* Title */
     @SerializedName("title")
-    val title: kotlin.String? = null,
+    val title: String? = null,
 
     /* Post Date ISO8601 */
     @SerializedName("date")
-    val date: kotlin.String? = null,
+    val date: String? = null,
 
     /* Author MyAnimeList Username */
     @SerializedName("author_username")
-    val authorUsername: kotlin.String? = null,
+    val authorUsername: String? = null,
 
     /* Author Profile URL */
     @SerializedName("author_url")
-    val authorUrl: kotlin.String? = null,
+    val authorUrl: String? = null,
 
     /* Comment count */
     @SerializedName("comments")
-    val comments: kotlin.Int? = null,
+    val comments: Int? = null,
 
     @SerializedName("last_comment")
     val lastComment: ForumDataInnerLastComment? = null

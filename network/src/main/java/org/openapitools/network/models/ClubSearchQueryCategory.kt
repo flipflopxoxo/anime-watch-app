@@ -24,7 +24,7 @@ import com.google.gson.annotations.SerializedName
  * Values: anime,manga,actors_and_artists,characters,cities_and_neighborhoods,companies,conventions,games,japan,music,other,schools
  */
 
-enum class ClubSearchQueryCategory(val value: kotlin.String) {
+enum class ClubSearchQueryCategory(val value: String) {
 
     @SerializedName(value = "anime")
     anime("anime"),
@@ -69,18 +69,18 @@ enum class ClubSearchQueryCategory(val value: kotlin.String) {
      * This solves a problem when the variable name and its value are different, and ensures that
      * the client sends the correct enum values to the server always.
      */
-    override fun toString(): kotlin.String = value
+    override fun toString(): String = value
 
     companion object {
         /**
          * Converts the provided [data] to a [String] on success, null otherwise.
          */
-        fun encode(data: kotlin.Any?): kotlin.String? = if (data is ClubSearchQueryCategory) "$data" else null
+        fun encode(data: Any?): String? = if (data is ClubSearchQueryCategory) "$data" else null
 
         /**
          * Returns a valid [ClubSearchQueryCategory] for [data], null otherwise.
          */
-        fun decode(data: kotlin.Any?): ClubSearchQueryCategory? = data?.let {
+        fun decode(data: Any?): ClubSearchQueryCategory? = data?.let {
           val normalizedData = "$it".lowercase()
           values().firstOrNull { value ->
             it == value || normalizedData == "$value".lowercase()

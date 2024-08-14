@@ -33,10 +33,10 @@ data class WatchPromos (
 
     /* Promo Title */
     @SerializedName("title")
-    val title: kotlin.String? = null,
+    val title: String? = null,
 
     @SerializedName("data")
-    val `data`: kotlin.collections.List<kotlin.Any>? = null
+    val `data`: List<kotlin.Any>? = null
 
 )
 

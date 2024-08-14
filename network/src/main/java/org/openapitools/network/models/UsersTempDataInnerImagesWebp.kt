@@ -29,7 +29,7 @@ data class UsersTempDataInnerImagesWebp (
 
     /* Image URL WEBP (225x335) */
     @SerializedName("image_url")
-    val imageUrl: kotlin.String? = null
+    val imageUrl: String? = null
 
 )
 

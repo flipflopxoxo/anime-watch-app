@@ -32,19 +32,19 @@ data class ForumDataInnerLastComment (
 
     /* Last comment URL */
     @SerializedName("url")
-    val url: kotlin.String? = null,
+    val url: String? = null,
 
     /* Author MyAnimeList Username */
     @SerializedName("author_username")
-    val authorUsername: kotlin.String? = null,
+    val authorUsername: String? = null,
 
     /* Author Profile URL */
     @SerializedName("author_url")
-    val authorUrl: kotlin.String? = null,
+    val authorUrl: String? = null,
 
     /* Last comment date posted ISO8601 */
     @SerializedName("date")
-    val date: kotlin.String? = null
+    val date: String? = null
 
 )
 

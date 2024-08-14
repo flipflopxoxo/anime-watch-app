@@ -32,19 +32,19 @@ data class WatchEpisodesAllOfEpisodes (
 
     /* MyAnimeList ID */
     @SerializedName("mal_id")
-    val malId: kotlin.String? = null,
+    val malId: String? = null,
 
     /* MyAnimeList URL */
     @SerializedName("url")
-    val url: kotlin.String? = null,
+    val url: String? = null,
 
     /* Episode Title */
     @SerializedName("title")
-    val title: kotlin.String? = null,
+    val title: String? = null,
 
     /* For MyAnimeList Premium Users */
     @SerializedName("premium")
-    val premium: kotlin.Boolean? = null
+    val premium: Boolean? = null
 
 )
 

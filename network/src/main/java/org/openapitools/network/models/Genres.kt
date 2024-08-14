@@ -27,7 +27,7 @@ import com.google.gson.annotations.SerializedName
 data class Genres (
 
     @SerializedName("data")
-    val `data`: kotlin.collections.List<Genre>? = null
+    val `data`: List<Genre>? = null
 
 )
 

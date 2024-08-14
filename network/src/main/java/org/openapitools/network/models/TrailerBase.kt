@@ -31,15 +31,15 @@ data class TrailerBase (
 
     /* YouTube ID */
     @SerializedName("youtube_id")
-    val youtubeId: kotlin.String? = null,
+    val youtubeId: String? = null,
 
     /* YouTube URL */
     @SerializedName("url")
-    val url: kotlin.String? = null,
+    val url: String? = null,
 
     /* Parsed Embed URL */
     @SerializedName("embed_url")
-    val embedUrl: kotlin.String? = null
+    val embedUrl: String? = null
 
 )
 

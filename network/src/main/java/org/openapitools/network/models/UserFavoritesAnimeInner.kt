@@ -33,24 +33,24 @@ data class UserFavoritesAnimeInner (
 
     /* MyAnimeList ID */
     @SerializedName("mal_id")
-    val malId: kotlin.Int? = null,
+    val malId: Int? = null,
 
     /* MyAnimeList URL */
     @SerializedName("url")
-    val url: kotlin.String? = null,
+    val url: String? = null,
 
     @SerializedName("images")
     val images: AnimeImages? = null,
 
     /* Entry title */
     @SerializedName("title")
-    val title: kotlin.String? = null,
+    val title: String? = null,
 
     @SerializedName("type")
-    val type: kotlin.String? = null,
+    val type: String? = null,
 
     @SerializedName("start_year")
-    val startYear: kotlin.Int? = null
+    val startYear: Int? = null
 
 )
 

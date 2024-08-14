@@ -29,13 +29,13 @@ import com.google.gson.annotations.SerializedName
 data class ClubRelationsData (
 
     @SerializedName("anime")
-    val anime: kotlin.collections.List<MalUrl>? = null,
+    val anime: List<MalUrl>? = null,
 
     @SerializedName("manga")
-    val manga: kotlin.collections.List<MalUrl>? = null,
+    val manga: List<MalUrl>? = null,
 
     @SerializedName("characters")
-    val characters: kotlin.collections.List<MalUrl>? = null
+    val characters: List<MalUrl>? = null
 
 )
 

@@ -27,7 +27,7 @@ import com.google.gson.annotations.SerializedName
 data class StreamingLinks (
 
     @SerializedName("data")
-    val `data`: kotlin.collections.List<AnimeFullExternalInner>? = null
+    val `data`: List<AnimeFullExternalInner>? = null
 
 )
 

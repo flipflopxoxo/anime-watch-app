@@ -33,11 +33,11 @@ data class UserFriendsAllOfDataInner (
 
     /* Last Online Date ISO8601 format */
     @SerializedName("last_online")
-    val lastOnline: kotlin.String? = null,
+    val lastOnline: String? = null,
 
     /* Friends Since Date ISO8601 format */
     @SerializedName("friends_since")
-    val friendsSince: kotlin.String? = null
+    val friendsSince: String? = null
 
 )
 

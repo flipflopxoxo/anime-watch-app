@@ -30,11 +30,11 @@ data class CharacterPicturesDataInner (
 
     /* Default JPG Image Size URL */
     @SerializedName("image_url")
-    val imageUrl: kotlin.String? = null,
+    val imageUrl: String? = null,
 
     /* Large JPG Image Size URL */
     @SerializedName("large_image_url")
-    val largeImageUrl: kotlin.String? = null
+    val largeImageUrl: String? = null
 
 )
 

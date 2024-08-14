@@ -28,7 +28,7 @@ import com.google.gson.annotations.SerializedName
 data class EntryRecommendations (
 
     @SerializedName("data")
-    val `data`: kotlin.collections.List<kotlin.Any>? = null
+    val `data`: List<kotlin.Any>? = null
 
 )
 
