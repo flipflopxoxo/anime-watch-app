@@ -27,40 +27,40 @@ import com.google.gson.annotations.SerializedName
 enum class MangaSearchQueryOrderby(val value: kotlin.String) {
 
     @SerializedName(value = "mal_id")
-    mal_id("mal_id"),
+    MAL_ID("mal_id"),
 
     @SerializedName(value = "title")
-    title("title"),
+    TITLE("title"),
 
     @SerializedName(value = "start_date")
-    start_date("start_date"),
+    START_DATE("start_date"),
 
     @SerializedName(value = "end_date")
-    end_date("end_date"),
+    END_DATE("end_date"),
 
     @SerializedName(value = "chapters")
-    chapters("chapters"),
+    CHAPTERS("chapters"),
 
     @SerializedName(value = "volumes")
-    volumes("volumes"),
+    VOLUMES("volumes"),
 
     @SerializedName(value = "score")
-    score("score"),
+    SCORE("score"),
 
     @SerializedName(value = "scored_by")
-    scored_by("scored_by"),
+    SCORED_BY("scored_by"),
 
     @SerializedName(value = "rank")
-    rank("rank"),
+    RANK("rank"),
 
     @SerializedName(value = "popularity")
-    popularity("popularity"),
+    POPULARITY("popularity"),
 
     @SerializedName(value = "members")
-    members("members"),
+    MEMBERS("members"),
 
     @SerializedName(value = "favorites")
-    favorites("favorites");
+    FAVORITES("favorites");
 
     /**
      * Override [toString()] to avoid using the enum variable name as the value, and instead use

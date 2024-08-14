@@ -27,16 +27,16 @@ import com.google.gson.annotations.SerializedName
 enum class ProducersQueryOrderby(val value: kotlin.String) {
 
     @SerializedName(value = "mal_id")
-    mal_id("mal_id"),
+    MAL_ID("mal_id"),
 
     @SerializedName(value = "count")
-    count("count"),
+    COUNT("count"),
 
     @SerializedName(value = "favorites")
-    favorites("favorites"),
+    FAVORITES("favorites"),
 
     @SerializedName(value = "established")
-    established("established");
+    ESTABLISHED("established");
 
     /**
      * Override [toString()] to avoid using the enum variable name as the value, and instead use

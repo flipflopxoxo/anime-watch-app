@@ -27,16 +27,16 @@ import com.google.gson.annotations.SerializedName
 enum class ClubSearchQueryOrderby(val value: kotlin.String) {
 
     @SerializedName(value = "mal_id")
-    mal_id("mal_id"),
+    MAL_ID("mal_id"),
 
     @SerializedName(value = "name")
-    name("name"),
+    NAME("name"),
 
     @SerializedName(value = "members_count")
-    members_count("members_count"),
+    MEMBERS_COUNT("members_count"),
 
     @SerializedName(value = "created")
-    created("created");
+    CREATED("created");
 
     /**
      * Override [toString()] to avoid using the enum variable name as the value, and instead use
