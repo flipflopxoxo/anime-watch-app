@@ -1,5 +1,7 @@
 package com.clydelizardo.animeon_watch.ongoing.presentation
 
+import android.annotation.SuppressLint
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -8,14 +10,23 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.clydelizardo.domain.AnimeModel
 
+@Preview
+@Composable
+private fun OngoingAnimeListViewLoading() {
+    OngoingAnimeListView(ongoingAnimeViewState = OngoingAnimeViewState(isLoading = true))
+}
+
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun OngoingAnimeListView(ongoingAnimeViewState: OngoingAnimeViewState) {
@@ -25,17 +36,20 @@ fun OngoingAnimeListView(ongoingAnimeViewState: OngoingAnimeViewState) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(it)
         ) {
             TopAppBar(title = { Text(text = "Ongoing Anime") })
             LazyColumn(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .weight(1f)
+                    .weight(1f),
             ) {
                 if (ongoingAnimeViewState.isLoading) {
                     item(key = "loading") {
-                        CircularProgressIndicator()
+                        Box(
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
+                        }
                     }
                 } else if (ongoingAnimeViewState.errorMessage != null) {
                     item(key = "error") {
@@ -43,7 +57,8 @@ fun OngoingAnimeListView(ongoingAnimeViewState: OngoingAnimeViewState) {
                     }
                 }
                 items(items = ongoingAnimeViewState.animeList, key = { it.id }) { animeModel ->
-                    AnimeListItem(animeModel = animeModel)
+                    AnimeListItemView(animeModel = animeModel, modifier = Modifier.padding(horizontal = 8.dp))
+                    HorizontalDivider()
                 }
             }
         }
@@ -58,11 +73,4 @@ private fun ErrorListItem(errorMessage: String) {
             .fillMaxWidth()
             .padding(16.dp)
     )
-}
-
-@Composable
-private fun AnimeListItem(animeModel: AnimeModel) {
-    Column {
-        Text(text = animeModel.name)
-    }
 }
