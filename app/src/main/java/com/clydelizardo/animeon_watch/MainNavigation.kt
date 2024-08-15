@@ -30,7 +30,7 @@ fun MainNavHost(navController: NavHostController, startDestination: String) {
         ) {
             val vm = hiltViewModel<AnimeDetailsViewModel>()
             val viewState by vm.state.collectAsState()
-            AnimeDetailsView(animeDetailsViewStateModel = viewState)
+            AnimeDetailsView(viewState = viewState, onNavigateUp = { navController.navigateUp() })
         }
     }
 }
