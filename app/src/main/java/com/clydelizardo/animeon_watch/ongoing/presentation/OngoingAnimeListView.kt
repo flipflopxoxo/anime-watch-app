@@ -19,17 +19,24 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.clydelizardo.animeon_watch.NavigationAction
 
 @Preview
 @Composable
 private fun OngoingAnimeListViewLoading() {
-    OngoingAnimeListView(ongoingAnimeViewState = OngoingAnimeViewState(isLoading = true))
+    OngoingAnimeListView(
+        ongoingAnimeViewState = OngoingAnimeViewState(isLoading = true),
+        onNavigate = {},
+    )
 }
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun OngoingAnimeListView(ongoingAnimeViewState: OngoingAnimeViewState) {
+fun OngoingAnimeListView(
+    ongoingAnimeViewState: OngoingAnimeViewState,
+    onNavigate: (NavigationAction) -> Unit,
+) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
     ) {
@@ -57,7 +64,11 @@ fun OngoingAnimeListView(ongoingAnimeViewState: OngoingAnimeViewState) {
                     }
                 }
                 items(items = ongoingAnimeViewState.animeList, key = { it.id }) { animeModel ->
-                    AnimeListItemView(animeModel = animeModel, modifier = Modifier.padding(horizontal = 8.dp))
+                    AnimeListItemView(
+                        modifier = Modifier.padding(horizontal = 8.dp),
+                        animeModel = animeModel,
+                        onClick = { onNavigate(NavigationAction.AnimeDetails(it.id)) }
+                    )
                     HorizontalDivider()
                 }
             }

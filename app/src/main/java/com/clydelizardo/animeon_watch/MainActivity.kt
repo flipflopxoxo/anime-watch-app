@@ -7,11 +7,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.clydelizardo.animeon_watch.ongoing.presentation.OngoingAnimeListView
+import androidx.navigation.compose.rememberNavController
 import com.clydelizardo.animeon_watch.ongoing.presentation.OngoingAnimeListViewModel
 import com.clydelizardo.animeon_watch.ui.theme.AnimeOnWatchTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -25,9 +23,10 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             AnimeOnWatchTheme {
-                val vm = viewModel
-                val viewState by vm.state.collectAsState()
-                OngoingAnimeListView(ongoingAnimeViewState = viewState)
+                MainNavHost(
+                    navController = rememberNavController(),
+                    startDestination = NavigationAction.OngoingAnime.path
+                )
             }
         }
     }

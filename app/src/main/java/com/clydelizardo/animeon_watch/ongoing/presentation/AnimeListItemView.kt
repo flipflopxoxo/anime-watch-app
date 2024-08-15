@@ -2,6 +2,7 @@ package com.clydelizardo.animeon_watch.ongoing.presentation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -53,9 +54,12 @@ fun AnimeListItemViewPreview() {
 fun AnimeListItemView(
     modifier: Modifier = Modifier,
     animeModel: AnimeModel,
+    onClick: (AnimeModel) -> Unit = {},
 ) {
     Column(
-        modifier = modifier
+        modifier = modifier.clickable {
+            onClick(animeModel)
+        }
     ) {
         Text(
             modifier = Modifier.padding(start = 8.dp, end = 8.dp, top = 8.dp),
