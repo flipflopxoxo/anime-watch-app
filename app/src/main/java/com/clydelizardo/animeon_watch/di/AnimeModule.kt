@@ -1,6 +1,6 @@
 package com.clydelizardo.animeon_watch.di
 
-import com.clydelizardo.animeon_watch.data.AnimeRepositoryImpl
+import com.clydelizardo.animeon_watch.ongoing.data.AnimeRepositoryImpl
 import com.clydelizardo.animeon_watch.ongoing.domain.AnimeRepository
 import dagger.Binds
 import dagger.Module

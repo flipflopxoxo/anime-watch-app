@@ -1,4 +1,4 @@
-package com.clydelizardo.animeon_watch.data
+package com.clydelizardo.animeon_watch.ongoing.data
 
 import com.clydelizardo.domain.AnimeModel
 import com.clydelizardo.domain.AnimeType
