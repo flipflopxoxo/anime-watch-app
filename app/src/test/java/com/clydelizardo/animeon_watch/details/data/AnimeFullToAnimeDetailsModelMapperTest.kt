@@ -2,11 +2,14 @@ package com.clydelizardo.animeon_watch.details.data
 
 import com.clydelizardo.domain.AnimeDetailsModel
 import com.clydelizardo.domain.AnimeType
+import com.clydelizardo.domain.ImageSource
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.openapitools.network.models.AnimeFull
 import org.openapitools.network.models.AnimeFullRelationsInner
 import org.openapitools.network.models.AnimeFullTheme
+import org.openapitools.network.models.AnimeImages
+import org.openapitools.network.models.AnimeImagesJpg
 import org.openapitools.network.models.MalUrl
 import org.openapitools.network.models.Title
 
@@ -57,6 +60,13 @@ class AnimeFullToAnimeDetailsModelMapperTest {
                         )
                     )
                 )
+            ),
+            images = AnimeImages(
+                jpg = AnimeImagesJpg(
+                    imageUrl = "imageUrl",
+                    smallImageUrl = "smallImageUrl",
+                    largeImageUrl = "largeImageUrl"
+                )
             )
         )
         val expected = AnimeDetailsModel(
@@ -73,6 +83,11 @@ class AnimeFullToAnimeDetailsModelMapperTest {
             openingThemes = listOf("\"Fatale (ファタール)\" by GEMN"),
             endingThemes = listOf("\"Burning\" by Hitsujibungaku (羊文学)"),
             relatedMedia = listOf("Adaptation - \"Oshi no Ko\" manga", "Prequel - \"Oshi no Ko\" anime"),
+            imageSource = ImageSource(
+                smallUrl = "smallImageUrl",
+                mediumUrl = "imageUrl",
+                largeUrl = "largeImageUrl"
+            )
         )
 
         val result = mapper.map(animeFull)

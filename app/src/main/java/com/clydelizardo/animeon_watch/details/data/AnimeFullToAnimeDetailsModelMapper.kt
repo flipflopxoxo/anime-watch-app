@@ -2,7 +2,9 @@ package com.clydelizardo.animeon_watch.details.data
 
 import com.clydelizardo.domain.AnimeDetailsModel
 import com.clydelizardo.domain.AnimeType
+import com.clydelizardo.domain.ImageSource
 import org.openapitools.network.models.AnimeFull
+import org.openapitools.network.models.AnimeImagesJpg
 import javax.inject.Inject
 
 class AnimeFullToAnimeDetailsModelMapper @Inject constructor() {
@@ -20,7 +22,16 @@ class AnimeFullToAnimeDetailsModelMapper @Inject constructor() {
             source = animeFull.source ?: "",
             openingThemes = animeFull.theme?.openings.orEmpty(),
             endingThemes = animeFull.theme?.endings.orEmpty(),
-            relatedMedia = mapRelatedMedia(animeFull)
+            relatedMedia = mapRelatedMedia(animeFull),
+            imageSource = mapImageSource(animeFull.images?.jpg)
+        )
+    }
+
+    private fun mapImageSource(jpg: AnimeImagesJpg?): ImageSource {
+        return ImageSource(
+            smallUrl = jpg?.smallImageUrl ?: "",
+            mediumUrl = jpg?.imageUrl ?: "",
+            largeUrl = jpg?.largeImageUrl ?: "",
         )
     }
 

@@ -13,5 +13,6 @@ data class AnimeDetailsModel(
     val source: String,
     val openingThemes: List<String>,
     val endingThemes: List<String>,
-    val relatedMedia: List<String>
+    val relatedMedia: List<String>,
+    val imageSource: ImageSource,
 )

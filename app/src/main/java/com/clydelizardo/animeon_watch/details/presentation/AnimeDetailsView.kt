@@ -21,10 +21,17 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import coil.compose.AsyncImage
 import com.clydelizardo.animeon_watch.view.ErrorView
 import com.clydelizardo.domain.AnimeDetailsModel
 import com.clydelizardo.domain.AnimeType
+import com.clydelizardo.domain.ImageSource
 
 @Preview
 @Composable
@@ -45,6 +52,11 @@ fun AnimeDetailsPreview() {
                 openingThemes = listOf("\"Fatale (ファタール)\" by GEMN"),
                 endingThemes = listOf("\"Burning\" by Hitsujibungaku (羊文学)"),
                 relatedMedia = listOf("Adaptation - \"Oshi no Ko\"", "Prequal - Oshi no Ko"),
+                imageSource = ImageSource(
+                    smallUrl = "",
+                    mediumUrl = "",
+                    largeUrl = "",
+                )
             )
         )
     ) {  }
@@ -94,38 +106,80 @@ private fun AnimeDetailsContent(animeDetailsModel: AnimeDetailsModel) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .verticalScroll(rememberScrollState())
+            .verticalScroll(rememberScrollState()),
     ) {
-        Text(text = animeDetailsModel.titleEnglish, style = MaterialTheme.typography.headlineMedium)
-        Text(text = animeDetailsModel.titleJapanese, style = MaterialTheme.typography.titleSmall)
-        Text(text = "Genres: ${asFormattedText(animeDetailsModel.genres)}")
-        Text(text = "Themes: ${asFormattedText(animeDetailsModel.themes)}")
-        Text(text = "Type: ${animeDetailsModel.type.displayName}")
+        Text(
+            modifier = Modifier.padding(8.dp),
+            text = animeDetailsModel.titleEnglish,
+            style = MaterialTheme.typography.headlineMedium
+        )
+        Text(
+            modifier = Modifier.padding(start = 8.dp, end = 8.dp, bottom = 4.dp),
+            text = animeDetailsModel.titleJapanese,
+            style = MaterialTheme.typography.titleSmall
+        )
+        AsyncImage(
+            modifier = Modifier.fillMaxWidth(),
+            model = animeDetailsModel.imageSource.largeUrl,
+            contentDescription = null,
+            contentScale = ContentScale.FillWidth
+        )
+        DetailEntry(label = "Genres: ", text = asFormattedText(animeDetailsModel.genres))
+        DetailEntry(label = "Themes: ", text = asFormattedText(animeDetailsModel.themes))
+        DetailEntry(label = "Types: ", text = animeDetailsModel.type.displayName)
         if (animeDetailsModel.episodes != null) {
-            Text(text = "Episodes: ${animeDetailsModel.episodes}")
+            DetailEntry(label = "Episodes: ", text = animeDetailsModel.episodes.toString())
         }
-        Text(text = "Status: ${animeDetailsModel.status}")
-        Text(text = "Duration: ${animeDetailsModel.duration}")
-        Text(text = "Source: ${animeDetailsModel.source}")
+        DetailEntry(label = "Status: ", text = animeDetailsModel.status)
+        DetailEntry(label = "Duration: ", text = animeDetailsModel.duration)
+        DetailEntry(label = "Source: ", text = animeDetailsModel.source)
         if (animeDetailsModel.openingThemes.isNotEmpty()) {
-            Text(text = "Opening theme(s)")
+            DetailHeader("Opening theme(s)")
             animeDetailsModel.openingThemes.forEach {
-                Text(text = it)
+                ValueItem(text = it)
             }
         }
         if (animeDetailsModel.endingThemes.isNotEmpty()) {
-            Text(text = "Ending theme(s)")
+            DetailHeader(text = "Ending theme(s)")
             animeDetailsModel.endingThemes.forEach {
-                Text(text = it)
+                ValueItem(text = it)
             }
         }
         if (animeDetailsModel.relatedMedia.isNotEmpty()) {
-            Text(text = "Related media")
+            DetailHeader(text = "Related media")
             animeDetailsModel.relatedMedia.forEach {
-                Text(text = it)
+                ValueItem(text = it)
             }
         }
     }
+}
+
+@Composable
+private fun ValueItem(text: String) {
+    Text(
+        modifier = Modifier.padding(top = 6.dp, start = 8.dp, end = 8.dp),
+        text = text
+    )
+}
+
+@Composable
+private fun DetailHeader(text: String) {
+    Text(
+        modifier = Modifier.padding(top = 12.dp, start = 8.dp, end = 8.dp),
+        text = text,
+        fontWeight = FontWeight.Bold
+    )
+}
+
+@Composable
+private fun DetailEntry(label: String? = null, text: String) {
+    Text(
+        modifier = Modifier.padding(top = 8.dp, start = 8.dp, end = 8.dp),
+        text = AnnotatedString(
+            label.orEmpty(),
+            spanStyle = SpanStyle(fontWeight = FontWeight.Bold)
+        ) + AnnotatedString(text)
+    )
 }
 
 @Composable
