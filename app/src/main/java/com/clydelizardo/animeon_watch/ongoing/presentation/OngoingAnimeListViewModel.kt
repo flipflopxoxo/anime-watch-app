@@ -26,7 +26,7 @@ class OngoingAnimeListViewModel @Inject constructor(
             val result = getOngoingAnimeUseCase.invoke()
             _state.update {
                 if (result.isSuccess) it.copy(isLoading = false, animeList = result.getOrNull().orEmpty())
-                else it.copy(isLoading = false, errorMessage = "Failed to load list")
+                else it.copy(isLoading = false, errorMessage = "Unable to load list")
             }
         }
     }
