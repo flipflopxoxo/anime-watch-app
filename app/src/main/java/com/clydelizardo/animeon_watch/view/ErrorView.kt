@@ -18,12 +18,13 @@ import androidx.compose.ui.unit.dp
 @Preview
 @Composable
 fun ErrorViewPreview() {
-    ErrorView(message = "Unable to load")
+    ErrorView(message = "Unable to load", modifier = Modifier)
 }
 
 @Composable
-fun ErrorView(message: String) {
+fun ErrorView(message: String, modifier: Modifier) {
     Column(
+        modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Icon(

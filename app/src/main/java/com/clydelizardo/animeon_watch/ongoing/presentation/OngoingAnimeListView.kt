@@ -20,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.clydelizardo.animeon_watch.NavigationAction
+import com.clydelizardo.animeon_watch.view.ErrorView
 
 @Preview
 @Composable
@@ -60,7 +61,14 @@ fun OngoingAnimeListView(
                     }
                 } else if (ongoingAnimeViewState.errorMessage != null) {
                     item(key = "error") {
-                        ErrorListItem(ongoingAnimeViewState.errorMessage)
+                        Box(
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            ErrorView(
+                                message = ongoingAnimeViewState.errorMessage,
+                                modifier = Modifier.align(Alignment.Center)
+                            )
+                        }
                     }
                 }
                 items(items = ongoingAnimeViewState.animeList, key = { it.id }) { animeModel ->
@@ -74,14 +82,4 @@ fun OngoingAnimeListView(
             }
         }
     }
-}
-
-@Composable
-private fun ErrorListItem(errorMessage: String) {
-    Text(
-        text = errorMessage,
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(16.dp)
-    )
 }
