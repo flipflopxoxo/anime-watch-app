@@ -1,8 +1,6 @@
 package com.clydelizardo.animeon_watch.ongoing.data
 
 import com.clydelizardo.animeon_watch.MainCoroutineRule
-import com.clydelizardo.animeon_watch.details.data.AnimeDetailsRepositoryImpl
-import com.clydelizardo.domain.AnimeDetailsModel
 import com.clydelizardo.domain.AnimeModel
 import io.mockk.coEvery
 import io.mockk.every
@@ -10,8 +8,8 @@ import io.mockk.impl.annotations.MockK
 import io.mockk.junit4.MockKRule
 import io.mockk.mockk
 import kotlinx.coroutines.test.runTest
-import org.junit.Assert
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
 import org.junit.Rule
 import org.junit.Test
 import org.openapitools.network.apis.SeasonsApi
@@ -47,7 +45,7 @@ class AnimeRepositoryImplTest {
 
             repositoryImpl = AnimeRepositoryImpl(seasonsApi, mapper)
             val result = repositoryImpl.getOngoingSeasonAnime()
-            Assert.assertEquals(Result.success(listOf(mockAnimeModel)), result)
+            assertEquals(Result.success(listOf(mockAnimeModel)), result)
         }
 
     @Test
@@ -60,7 +58,7 @@ class AnimeRepositoryImplTest {
 
             repositoryImpl = AnimeRepositoryImpl(seasonsApi, mapper)
             val result = repositoryImpl.getOngoingSeasonAnime()
-            Assert.assertTrue(result.isFailure)
+            assertTrue(result.isFailure)
         }
 
     @Test
