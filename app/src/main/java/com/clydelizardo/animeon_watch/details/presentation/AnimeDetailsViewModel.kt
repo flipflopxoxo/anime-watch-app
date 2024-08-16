@@ -1,5 +1,6 @@
 package com.clydelizardo.animeon_watch.details.presentation
 
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.clydelizardo.animeon_watch.details.domain.GetAnimeDetailsUseCase
@@ -13,6 +14,7 @@ import javax.inject.Inject
 @HiltViewModel
 class AnimeDetailsViewModel @Inject constructor(
     val getAnimeDetailsUseCase: GetAnimeDetailsUseCase,
+    val savedStateHandle: SavedStateHandle,
 ) : ViewModel() {
     private val _state = MutableStateFlow(AnimeDetailsViewStateModel())
     val state = _state.asStateFlow()
@@ -22,7 +24,7 @@ class AnimeDetailsViewModel @Inject constructor(
             _state.update {
                 it.copy(isLoading = true)
             }
-            val result = getAnimeDetailsUseCase(55791)
+            val result = getAnimeDetailsUseCase(savedStateHandle.get<Int>("id") ?: 0)
             _state.update {
                 if (result.isSuccess) {
                     it.copy(isLoading = false, animeDetails = result.getOrThrow())
