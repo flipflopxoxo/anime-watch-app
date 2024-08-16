@@ -6,6 +6,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.CircularProgressIndicator
@@ -90,7 +92,9 @@ fun AnimeDetailsView(viewState: AnimeDetailsViewStateModel, onNavigateUp: () -> 
 @Composable
 private fun AnimeDetailsContent(animeDetailsModel: AnimeDetailsModel) {
     Column(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState())
     ) {
         Text(text = animeDetailsModel.titleEnglish, style = MaterialTheme.typography.headlineMedium)
         Text(text = animeDetailsModel.titleJapanese, style = MaterialTheme.typography.titleSmall)
