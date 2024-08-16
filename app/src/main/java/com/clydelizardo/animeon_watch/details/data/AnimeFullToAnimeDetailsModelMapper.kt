@@ -20,10 +20,14 @@ class AnimeFullToAnimeDetailsModelMapper @Inject constructor() {
             source = animeFull.source ?: "",
             openingThemes = animeFull.theme?.openings.orEmpty(),
             endingThemes = animeFull.theme?.endings.orEmpty(),
-            relatedMedia = animeFull.relations?.flatMap { it.entry.orEmpty() }
-                ?.mapNotNull { it.name }.orEmpty()
+            relatedMedia = mapRelatedMedia(animeFull)
         )
     }
+
+    private fun mapRelatedMedia(animeFull: AnimeFull) =
+        animeFull.relations?.flatMap { relation ->
+            relation.entry?.map { "${relation.relation} - ${it.name} ${it.type}" }.orEmpty()
+        }.orEmpty()
 
     private fun mapAnimeType(type: AnimeFull.Type) = when (type) {
         AnimeFull.Type.TV -> AnimeType.TV
