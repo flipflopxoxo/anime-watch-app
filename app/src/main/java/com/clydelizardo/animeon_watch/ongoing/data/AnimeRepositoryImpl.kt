@@ -10,14 +10,18 @@ class AnimeRepositoryImpl @Inject constructor(
     private val animeToAnimeModelMapper: AnimeToAnimeModelMapper,
 ) : AnimeRepository {
     override suspend fun getOngoingSeasonAnime(): Result<List<AnimeModel>> {
-        val response = seasonsApi.getSeasonNow()
-        return when {
-            response.isSuccessful -> {
-                Result.success(response.body()?.data?.map {
-                    animeToAnimeModelMapper.map(it)
-                }.orEmpty())
+        try {
+            val response = seasonsApi.getSeasonNow()
+            return when {
+                response.isSuccessful -> {
+                    Result.success(response.body()?.data?.map {
+                        animeToAnimeModelMapper.map(it)
+                    }.orEmpty())
+                }
+                else -> Result.failure(Exception())
             }
-            else -> Result.failure(Exception())
+        } catch (e: Exception) {
+            return Result.failure(e)
         }
     }
 }

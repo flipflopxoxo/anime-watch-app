@@ -10,11 +10,15 @@ class AnimeDetailsRepositoryImpl @Inject constructor(
     private val mapper: AnimeFullToAnimeDetailsModelMapper,
 ): AnimeDetailsRepository {
     override suspend fun getAnimeDetails(animeId: Int): Result<AnimeDetailsModel> {
-        val result = animeApi.getAnimeFullById(animeId)
-        if (result.isSuccessful) {
-            return Result.success(mapper.map(result.body()!!.data!!))
-        } else {
-            return Result.failure(Exception())
+        try {
+            val result = animeApi.getAnimeFullById(animeId)
+            return if (result.isSuccessful) {
+                Result.success(mapper.map(result.body()!!.data!!))
+            } else {
+                Result.failure(Exception())
+            }
+        } catch (e: Exception) {
+            return Result.failure(e)
         }
     }
 }

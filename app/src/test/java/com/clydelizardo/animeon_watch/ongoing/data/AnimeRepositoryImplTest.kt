@@ -1,6 +1,8 @@
 package com.clydelizardo.animeon_watch.ongoing.data
 
 import com.clydelizardo.animeon_watch.MainCoroutineRule
+import com.clydelizardo.animeon_watch.details.data.AnimeDetailsRepositoryImpl
+import com.clydelizardo.domain.AnimeDetailsModel
 import com.clydelizardo.domain.AnimeModel
 import io.mockk.coEvery
 import io.mockk.every
@@ -9,6 +11,7 @@ import io.mockk.junit4.MockKRule
 import io.mockk.mockk
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert
+import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test
 import org.openapitools.network.apis.SeasonsApi
@@ -58,5 +61,16 @@ class AnimeRepositoryImplTest {
             repositoryImpl = AnimeRepositoryImpl(seasonsApi, mapper)
             val result = repositoryImpl.getOngoingSeasonAnime()
             Assert.assertTrue(result.isFailure)
+        }
+
+    @Test
+    fun `Given API call throws exception, When requesting details, Then failure result is returned`() =
+        runTest {
+            val exception = Exception()
+            coEvery { seasonsApi.getSeasonNow() } throws exception
+
+            repositoryImpl = AnimeRepositoryImpl(seasonsApi, mapper)
+            val result = repositoryImpl.getOngoingSeasonAnime()
+            assertEquals(Result.failure<List<AnimeModel>>(exception), result)
         }
 }

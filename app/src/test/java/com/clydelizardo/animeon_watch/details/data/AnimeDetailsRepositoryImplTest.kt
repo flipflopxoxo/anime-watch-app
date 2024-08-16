@@ -8,7 +8,8 @@ import io.mockk.impl.annotations.MockK
 import io.mockk.junit4.MockKRule
 import io.mockk.mockk
 import kotlinx.coroutines.test.runTest
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
 import org.junit.Rule
 import org.junit.Test
 import org.openapitools.network.apis.AnimeApi
@@ -60,4 +61,15 @@ class AnimeDetailsRepositoryImplTest {
         val result = repositoryImpl.getAnimeDetails(1)
         assertTrue(result.isFailure)
     }
+
+    @Test
+    fun `Given API call throws exception, When requesting details, Then failure result is returned`() =
+        runTest {
+            val exception = Exception()
+            coEvery { animeApi.getAnimeFullById(1) } throws exception
+
+            repositoryImpl = AnimeDetailsRepositoryImpl(animeApi, mapper)
+            val result = repositoryImpl.getAnimeDetails(1)
+            assertEquals(Result.failure<AnimeDetailsModel>(exception), result)
+        }
 }
