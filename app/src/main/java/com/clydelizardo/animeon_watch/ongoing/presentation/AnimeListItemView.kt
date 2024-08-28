@@ -57,14 +57,19 @@ fun AnimeListItemView(
     onClick: (AnimeModel) -> Unit = {},
 ) {
     Column(
-        modifier = modifier.clickable {
-            onClick(animeModel)
-        }
+        modifier = modifier
+            .clickable {
+                onClick(animeModel)
+            }
+            .background(
+                shape = RoundedCornerShape(8.dp),
+                color = MaterialTheme.colorScheme.surfaceContainer
+            )
     ) {
         Text(
             modifier = Modifier.padding(start = 8.dp, end = 8.dp, top = 8.dp),
             text = animeModel.name,
-            style = MaterialTheme.typography.headlineSmall
+            style = MaterialTheme.typography.titleLarge
         )
         val durationText = when (animeModel.type) {
             AnimeType.TV -> (if (animeModel.episodes != null) {
@@ -77,7 +82,8 @@ fun AnimeListItemView(
             modifier = Modifier
                 .align(Alignment.CenterHorizontally)
                 .padding(vertical = 4.dp),
-            text = durationText
+            text = durationText,
+            style = MaterialTheme.typography.bodyMedium
         )
         Row(
             // Genres
@@ -88,9 +94,8 @@ fun AnimeListItemView(
         ) {
             animeModel.genres.forEach {
                 Box(
-                    modifier = Modifier.border(
-                        1.dp,
-                        color = MaterialTheme.colorScheme.onSurface,
+                    modifier = Modifier.background(
+                        color = MaterialTheme.colorScheme.surfaceContainerHigh,
                         shape = RoundedCornerShape(6.dp)
                     )
                 ) {
@@ -98,7 +103,9 @@ fun AnimeListItemView(
                 }
             }
         }
-        Row {
+        Row(
+            modifier = Modifier.padding(8.dp)
+        ) {
             AsyncImage(
                 model = animeModel.image.largeUrl,
                 contentDescription = null,
@@ -109,12 +116,51 @@ fun AnimeListItemView(
             )
             Text(
                 modifier = Modifier
-                    .padding(8.dp)
+                    .padding(start = 8.dp)
                     .weight(0.5f)
                     .aspectRatio(0.707f),
                 text = animeModel.synopsis,
                 overflow = TextOverflow.Ellipsis,
+                style = MaterialTheme.typography.bodyMedium
             )
         }
+    }
+}
+
+@Composable
+fun AnimeListItemSimpleView(
+    modifier: Modifier = Modifier,
+    animeModel: AnimeModel,
+    onClick: (AnimeModel) -> Unit = {},
+) {
+    Column(
+        modifier = modifier
+            .clickable {
+                onClick(animeModel)
+            }
+            .background(
+                shape = RoundedCornerShape(8.dp),
+                color = MaterialTheme.colorScheme.surfaceContainer
+            )
+    ) {
+        Text(
+            modifier = Modifier.padding(start = 8.dp, end = 8.dp, top = 8.dp),
+            text = animeModel.name,
+            style = MaterialTheme.typography.titleLarge
+        )
+        val durationText = when (animeModel.type) {
+            AnimeType.TV -> (if (animeModel.episodes != null) {
+                animeModel.episodes.toString()
+            } else "?") + " episodes - "
+
+            else -> ""
+        } + animeModel.duration
+        Text(
+            modifier = Modifier
+                .align(Alignment.CenterHorizontally)
+                .padding(vertical = 4.dp),
+            text = durationText,
+            style = MaterialTheme.typography.bodyMedium
+        )
     }
 }

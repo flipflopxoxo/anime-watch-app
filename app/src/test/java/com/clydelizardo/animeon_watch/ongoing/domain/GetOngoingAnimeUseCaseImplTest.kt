@@ -26,7 +26,7 @@ class GetOngoingAnimeUseCaseImplTest {
     @Test
     fun `Given anime id and repository available, When requesting anime details, Then successful result`() = runTest {
         val successValue = mockk<List<AnimeModel>>()
-        coEvery { mockRepository.getOngoingSeasonAnime() } returns Result.success(successValue)
+        coEvery { mockRepository.getOngoingSeasonAnime(1) } returns Result.success(successValue)
 
         getOngoingAnimeUseCaseImpl = GetOngoingAnimeUseCaseImpl(mockRepository)
 
@@ -37,7 +37,7 @@ class GetOngoingAnimeUseCaseImplTest {
     @Test
     fun `Given anime id and repository unavailable, When requesting anime details, Then failure result`() = runTest {
         val failureException = mockk<Exception>()
-        coEvery { mockRepository.getOngoingSeasonAnime() } returns Result.failure(failureException)
+        coEvery { mockRepository.getOngoingSeasonAnime(1) } returns Result.failure(failureException)
 
         getOngoingAnimeUseCaseImpl = GetOngoingAnimeUseCaseImpl(mockRepository)
 

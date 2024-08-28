@@ -44,7 +44,7 @@ class AnimeRepositoryImplTest {
             coEvery { mapper.map(mockAnime) } returns mockAnimeModel
 
             repositoryImpl = AnimeRepositoryImpl(seasonsApi, mapper)
-            val result = repositoryImpl.getOngoingSeasonAnime()
+            val result = repositoryImpl.getOngoingSeasonAnime(1)
             assertEquals(Result.success(listOf(mockAnimeModel)), result)
         }
 
@@ -57,7 +57,7 @@ class AnimeRepositoryImplTest {
             coEvery { seasonsApi.getSeasonNow() } returns failureResponse
 
             repositoryImpl = AnimeRepositoryImpl(seasonsApi, mapper)
-            val result = repositoryImpl.getOngoingSeasonAnime()
+            val result = repositoryImpl.getOngoingSeasonAnime(1)
             assertTrue(result.isFailure)
         }
 
@@ -68,7 +68,7 @@ class AnimeRepositoryImplTest {
             coEvery { seasonsApi.getSeasonNow() } throws exception
 
             repositoryImpl = AnimeRepositoryImpl(seasonsApi, mapper)
-            val result = repositoryImpl.getOngoingSeasonAnime()
+            val result = repositoryImpl.getOngoingSeasonAnime(1)
             assertEquals(Result.failure<List<AnimeModel>>(exception), result)
         }
 }

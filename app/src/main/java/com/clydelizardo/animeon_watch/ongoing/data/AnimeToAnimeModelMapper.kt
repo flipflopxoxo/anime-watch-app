@@ -10,9 +10,12 @@ class AnimeToAnimeModelMapper @Inject constructor() {
     fun map(anime: Anime): AnimeModel {
         return AnimeModel(
             id = anime.malId ?: -1,
-            name = anime.titles?.first {
+            name = anime.titles?.firstOrNull {
                 it.type == "English"
-            }?.title.orEmpty(),
+            }?.title
+                ?: anime.titles?.firstOrNull {
+                    it.type == "Default"
+                }?.title.orEmpty(),
             genres = anime.genres?.mapNotNull { it.name }.orEmpty(),
             synopsis = anime.synopsis.orEmpty(),
             type = mapAnimeType(anime.type ?: Anime.Type.TV),

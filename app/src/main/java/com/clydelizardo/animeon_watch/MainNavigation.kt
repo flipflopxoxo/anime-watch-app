@@ -20,9 +20,15 @@ fun MainNavHost(navController: NavHostController, startDestination: String) {
         composable("ongoingAnime") {
             val vm = hiltViewModel<OngoingAnimeListViewModel>()
             val viewState by vm.state.collectAsState()
-            OngoingAnimeListView(ongoingAnimeViewState = viewState, onNavigate = {
-                navController.navigate(it.path)
-            })
+            OngoingAnimeListView(
+                ongoingAnimeViewState = viewState,
+                onNavigate = {
+                    navController.navigate(it.path)
+                },
+                onItemIndexDisplayed = {
+                    vm.onItemIndexDisplayed(it)
+                }
+            )
         }
         composable(
             "animeDetails/{id}",
