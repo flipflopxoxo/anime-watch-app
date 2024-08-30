@@ -25,6 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.clydelizardo.animeon_watch.NavigationAction
+import com.clydelizardo.animeon_watch.util.Action
 import com.clydelizardo.animeon_watch.view.ErrorInlineView
 import com.clydelizardo.animeon_watch.view.ErrorView
 import kotlinx.coroutines.flow.distinctUntilChanged
@@ -34,10 +35,7 @@ import kotlinx.coroutines.flow.map
 @Composable
 private fun OngoingAnimeListViewLoading() {
     OngoingAnimeListView(
-        ongoingAnimeViewState = OngoingAnimeViewState(isLoading = true),
-        onNavigate = {},
-        onItemIndexDisplayed = {},
-        onRetry = { /*TODO*/ }
+        state = OngoingAnimeViewState(isLoading = true)
     )
 }
 
@@ -45,10 +43,8 @@ private fun OngoingAnimeListViewLoading() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun OngoingAnimeListView(
-    ongoingAnimeViewState: OngoingAnimeViewState,
-    onNavigate: (NavigationAction) -> Unit,
-    onItemIndexDisplayed: (Int) -> Unit,
-    onRetry: () -> Unit,
+    state: OngoingAnimeViewState,
+    onAction: (Action) -> Unit = { },
 ) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
@@ -64,7 +60,11 @@ fun OngoingAnimeListView(
                 snapshotFlow { rememberLazyListState.layoutInfo }
                     .map { lazyListLayoutInfo -> lazyListLayoutInfo.visibleItemsInfo.maxOf { it.index } }
                     .distinctUntilChanged()
-                    .collect(onItemIndexDisplayed)
+                    .collect {
+                        if (state.isReadyToLoadMore && it >= state.animeList.lastIndex) {
+                            onAction(OngoingAnimeListAction.LoadMore)
+                        }
+                    }
             }
             LazyColumn(
                 modifier = Modifier
@@ -72,15 +72,15 @@ fun OngoingAnimeListView(
                     .weight(1f),
                 state = rememberLazyListState,
             ) {
-                items(items = ongoingAnimeViewState.animeList, key = { it.id }) { animeModel ->
+                items(items = state.animeList, key = { it.id }) { animeModel ->
                     AnimeListItemView(
                         modifier = Modifier.padding(horizontal = 8.dp),
                         animeModel = animeModel,
-                        onClick = { onNavigate(NavigationAction.AnimeDetails(it.id)) }
+                        onClick = { onAction(NavigationAction.AnimeDetails(it.id)) }
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                 }
-                if (ongoingAnimeViewState.isLoading) {
+                if (state.isLoading) {
                     item(key = "loading") {
                         Box(
                             modifier = Modifier
@@ -90,26 +90,30 @@ fun OngoingAnimeListView(
                             CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
                         }
                     }
-                } else if (ongoingAnimeViewState.errorMessage != null) {
+                } else if (state.errorMessage != null) {
                     item(key = "error") {
                         Box(
                             modifier = Modifier.fillMaxWidth()
                         ) {
-                            if (ongoingAnimeViewState.animeList.isEmpty()) {
+                            if (state.animeList.isEmpty()) {
                                 ErrorView(
-                                    message = ongoingAnimeViewState.errorMessage,
+                                    message = state.errorMessage,
                                     modifier = Modifier
                                         .align(Alignment.Center)
                                         .padding(16.dp),
-                                    onRetry = onRetry
+                                    onRetry = {
+                                        onAction(OngoingAnimeListAction.Retry)
+                                    }
                                 )
                             } else {
                                 ErrorInlineView(
-                                    message = ongoingAnimeViewState.errorMessage,
+                                    message = state.errorMessage,
                                     modifier = Modifier
                                         .align(Alignment.Center)
                                         .padding(16.dp),
-                                    onRetry = onRetry
+                                    onRetry = {
+                                        onAction(OngoingAnimeListAction.Retry)
+                                    }
                                 )
                             }
                         }

@@ -36,7 +36,7 @@ class OngoingAnimeListViewModel @Inject constructor(
         }
     }
 
-    fun loadNextPage() {
+    private fun loadNextPage() {
         _state.update {
             it.copy(isLoading = true, errorMessage = null)
         }
@@ -55,12 +55,18 @@ class OngoingAnimeListViewModel @Inject constructor(
         }
     }
 
-    fun onItemIndexDisplayed(index: Int) {
-        val currentState = _state.value
-        if (!currentState.isLoading && currentState.hasNext
-            && currentState.errorMessage == null && currentState.animeList.lastIndex == index
-        ) {
-            loadNextPage()
-        }
+    fun onAction(action: OngoingAnimeListAction) {
+       when (action) {
+           OngoingAnimeListAction.LoadMore -> {
+               if (_state.value.isReadyToLoadMore) {
+                   loadNextPage()
+               }
+           }
+           OngoingAnimeListAction.Retry -> {
+               if (_state.value.isReadyForRetry) {
+                   loadNextPage()
+               }
+           }
+       }
     }
 }

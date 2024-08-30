@@ -9,3 +9,9 @@ data class OngoingAnimeViewState(
     val hasNext: Boolean = true,
     val errorMessage: String? = null,
 )
+
+val OngoingAnimeViewState.isReadyForRetry: Boolean
+    get() = errorMessage != null && !isLoading && hasNext
+
+val OngoingAnimeViewState.isReadyToLoadMore: Boolean
+    get() = !isLoading && hasNext && errorMessage == null

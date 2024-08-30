@@ -11,8 +11,10 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.clydelizardo.animeon_watch.details.presentation.AnimeDetailsView
 import com.clydelizardo.animeon_watch.details.presentation.AnimeDetailsViewModel
+import com.clydelizardo.animeon_watch.ongoing.presentation.OngoingAnimeListAction
 import com.clydelizardo.animeon_watch.ongoing.presentation.OngoingAnimeListView
 import com.clydelizardo.animeon_watch.ongoing.presentation.OngoingAnimeListViewModel
+import com.clydelizardo.animeon_watch.util.Action
 
 @Composable
 fun MainNavHost(navController: NavHostController, startDestination: String) {
@@ -21,15 +23,16 @@ fun MainNavHost(navController: NavHostController, startDestination: String) {
             val vm = hiltViewModel<OngoingAnimeListViewModel>()
             val viewState by vm.state.collectAsState()
             OngoingAnimeListView(
-                ongoingAnimeViewState = viewState,
-                onNavigate = {
-                    navController.navigate(it.path)
-                },
-                onItemIndexDisplayed = {
-                    vm.onItemIndexDisplayed(it)
-                },
-                onRetry = {
-                    vm.loadNextPage()
+                state = viewState,
+                onAction = {
+                    when (it) {
+                        is NavigationAction -> {
+                            navController.navigate(it.path)
+                        }
+                        is OngoingAnimeListAction -> {
+                            vm.onAction(it)
+                        }
+                    }
                 }
             )
         }
@@ -44,7 +47,7 @@ fun MainNavHost(navController: NavHostController, startDestination: String) {
     }
 }
 
-sealed class NavigationAction {
+sealed class NavigationAction: Action {
     data object OngoingAnime: NavigationAction() {
         override val path = "ongoingAnime"
     }
