@@ -27,6 +27,9 @@ fun MainNavHost(navController: NavHostController, startDestination: String) {
                 },
                 onItemIndexDisplayed = {
                     vm.onItemIndexDisplayed(it)
+                },
+                onRetry = {
+                    vm.loadNextPage()
                 }
             )
         }

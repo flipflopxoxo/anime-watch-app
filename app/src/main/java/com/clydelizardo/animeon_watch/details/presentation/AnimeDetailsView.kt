@@ -91,7 +91,8 @@ fun AnimeDetailsView(viewState: AnimeDetailsViewStateModel, onNavigateUp: () -> 
             if (viewState.errorMessage != null) {
                 ErrorView(
                     message = viewState.errorMessage,
-                    modifier = Modifier.align(Alignment.TopCenter)
+                    modifier = Modifier.align(Alignment.TopCenter),
+                    onRetry = { /*TODO*/ }
                 )
             }
             if (viewState.animeDetails != null) {

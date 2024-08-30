@@ -25,6 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.clydelizardo.animeon_watch.NavigationAction
+import com.clydelizardo.animeon_watch.view.ErrorInlineView
 import com.clydelizardo.animeon_watch.view.ErrorView
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
@@ -35,7 +36,8 @@ private fun OngoingAnimeListViewLoading() {
     OngoingAnimeListView(
         ongoingAnimeViewState = OngoingAnimeViewState(isLoading = true),
         onNavigate = {},
-        onItemIndexDisplayed = {}
+        onItemIndexDisplayed = {},
+        onRetry = { /*TODO*/ }
     )
 }
 
@@ -46,6 +48,7 @@ fun OngoingAnimeListView(
     ongoingAnimeViewState: OngoingAnimeViewState,
     onNavigate: (NavigationAction) -> Unit,
     onItemIndexDisplayed: (Int) -> Unit,
+    onRetry: () -> Unit,
 ) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
@@ -80,7 +83,9 @@ fun OngoingAnimeListView(
                 if (ongoingAnimeViewState.isLoading) {
                     item(key = "loading") {
                         Box(
-                            modifier = Modifier.fillMaxWidth()
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(16.dp)
                         ) {
                             CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
                         }
@@ -90,10 +95,23 @@ fun OngoingAnimeListView(
                         Box(
                             modifier = Modifier.fillMaxWidth()
                         ) {
-                            ErrorView(
-                                message = ongoingAnimeViewState.errorMessage,
-                                modifier = Modifier.align(Alignment.Center)
-                            )
+                            if (ongoingAnimeViewState.animeList.isEmpty()) {
+                                ErrorView(
+                                    message = ongoingAnimeViewState.errorMessage,
+                                    modifier = Modifier
+                                        .align(Alignment.Center)
+                                        .padding(16.dp),
+                                    onRetry = onRetry
+                                )
+                            } else {
+                                ErrorInlineView(
+                                    message = ongoingAnimeViewState.errorMessage,
+                                    modifier = Modifier
+                                        .align(Alignment.Center)
+                                        .padding(16.dp),
+                                    onRetry = onRetry
+                                )
+                            }
                         }
                     }
                 }
