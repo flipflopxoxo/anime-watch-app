@@ -1,11 +1,15 @@
+@file:OptIn(ExperimentalCoroutinesApi::class)
+
 package com.clydelizardo.animeon_watch.ongoing.domain
 
 import com.clydelizardo.animeon_watch.MainCoroutineRule
 import com.clydelizardo.domain.AnimeModel
+import com.clydelizardo.domain.PagedListModel
 import io.mockk.coEvery
 import io.mockk.impl.annotations.MockK
 import io.mockk.junit4.MockKRule
 import io.mockk.mockk
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Rule
@@ -25,7 +29,7 @@ class GetOngoingAnimeUseCaseImplTest {
 
     @Test
     fun `Given anime id and repository available, When requesting anime details, Then successful result`() = runTest {
-        val successValue = mockk<List<AnimeModel>>()
+        val successValue = mockk<PagedListModel<AnimeModel>>()
         coEvery { mockRepository.getOngoingSeasonAnime(1) } returns Result.success(successValue)
 
         getOngoingAnimeUseCaseImpl = GetOngoingAnimeUseCaseImpl(mockRepository)

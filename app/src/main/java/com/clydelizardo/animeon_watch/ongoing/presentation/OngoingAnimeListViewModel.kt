@@ -15,16 +15,13 @@ import javax.inject.Inject
 class OngoingAnimeListViewModel @Inject constructor(
     private val getOngoingAnimeUseCase: GetOngoingAnimeUseCase,
 ) : ViewModel() {
-    private val _state = MutableStateFlow(OngoingAnimeViewState(isLoading = false))
+    private val _state = MutableStateFlow(OngoingAnimeViewState(isLoading = true))
     val state = _state.asStateFlow()
 
     init {
         viewModelScope.launch {
-            _state.update {
-                it.copy(isLoading = true)
-            }
             val result = getOngoingAnimeUseCase.invoke()
-            _state.updateAndGet {
+            _state.update {
                 if (result.isSuccess) it.copy(
                     isLoading = false,
                     animeList = result.getOrNull()?.content.orEmpty(),
