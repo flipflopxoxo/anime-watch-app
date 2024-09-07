@@ -1,9 +1,9 @@
 package com.clydelizardo.animeonWatch.di
 
-import com.clydelizardo.animeonWatch.details.data.AnimeDetailsRepositoryImpl
+import com.clydelizardo.animeonWatch.data.details.AnimeDetailsRepositoryImpl
+import com.clydelizardo.animeonWatch.data.ongoing.AnimeRepositoryImpl
 import com.clydelizardo.animeonWatch.domain.details.AnimeDetailsRepository
 import com.clydelizardo.animeonWatch.domain.ongoing.AnimeRepository
-import com.clydelizardo.animeonWatch.ongoing.data.AnimeRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

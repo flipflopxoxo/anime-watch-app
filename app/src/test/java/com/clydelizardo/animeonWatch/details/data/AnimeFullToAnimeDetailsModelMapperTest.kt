@@ -1,5 +1,6 @@
 package com.clydelizardo.animeonWatch.details.data
 
+import com.clydelizardo.animeonWatch.data.details.AnimeFullToAnimeDetailsModelMapper
 import com.clydelizardo.models.AnimeDetailsModel
 import com.clydelizardo.models.AnimeType
 import com.clydelizardo.models.ImageSource

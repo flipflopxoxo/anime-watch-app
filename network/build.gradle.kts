@@ -10,7 +10,7 @@ java {
 
 dependencies {
     api(libs.gson)
-    implementation(libs.retrofit2.retrofit)
+    api(libs.retrofit2.retrofit)
     implementation(libs.retrofit2.converter.gson)
     implementation(libs.retrofit2.converter.scalars)
     implementation(libs.okhttp3.logging)

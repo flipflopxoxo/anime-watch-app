@@ -1,6 +1,8 @@
 package com.clydelizardo.animeonWatch.ongoing.data
 
 import com.clydelizardo.animeonWatch.MainCoroutineRule
+import com.clydelizardo.animeonWatch.data.ongoing.AnimeRepositoryImpl
+import com.clydelizardo.animeonWatch.data.ongoing.AnimeToAnimeModelMapper
 import com.clydelizardo.models.AnimeModel
 import io.mockk.coEvery
 import io.mockk.every
