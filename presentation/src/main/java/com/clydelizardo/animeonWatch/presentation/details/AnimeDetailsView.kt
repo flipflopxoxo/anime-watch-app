@@ -22,12 +22,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
+import com.clydelizardo.animeonWatch.presentation.R
 import com.clydelizardo.animeonWatch.presentation.common.Action
 import com.clydelizardo.animeonWatch.presentation.common.ErrorView
 import com.clydelizardo.models.AnimeDetailsModel
@@ -86,9 +88,9 @@ fun AnimeDetailsView(
     ) {
         Box(
             modifier =
-                Modifier
-                    .fillMaxSize()
-                    .padding(it),
+            Modifier
+                .fillMaxSize()
+                .padding(it),
         ) {
             if (viewState.isLoading) {
                 Box(
@@ -114,9 +116,9 @@ fun AnimeDetailsView(
 private fun AnimeDetailsContent(animeDetailsModel: AnimeDetailsModel) {
     Column(
         modifier =
-            Modifier
-                .fillMaxSize()
-                .verticalScroll(rememberScrollState()),
+        Modifier
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState()),
     ) {
         Text(
             modifier = Modifier.padding(8.dp),
@@ -134,29 +136,29 @@ private fun AnimeDetailsContent(animeDetailsModel: AnimeDetailsModel) {
             contentDescription = null,
             contentScale = ContentScale.FillWidth,
         )
-        DetailEntry(label = "Genres: ", text = asFormattedText(animeDetailsModel.genres))
-        DetailEntry(label = "Themes: ", text = asFormattedText(animeDetailsModel.themes))
-        DetailEntry(label = "Types: ", text = animeDetailsModel.type.displayName)
+        DetailEntry(label = stringResource(R.string.label_genres), text = asFormattedText(animeDetailsModel.genres))
+        DetailEntry(label = stringResource(R.string.label_themes), text = asFormattedText(animeDetailsModel.themes))
+        DetailEntry(label = stringResource(R.string.label_types), text = animeDetailsModel.type.displayName)
         if (animeDetailsModel.episodes != null) {
-            DetailEntry(label = "Episodes: ", text = animeDetailsModel.episodes.toString())
+            DetailEntry(label = stringResource(R.string.label_episodes), text = animeDetailsModel.episodes.toString())
         }
-        DetailEntry(label = "Status: ", text = animeDetailsModel.status)
-        DetailEntry(label = "Duration: ", text = animeDetailsModel.duration)
-        DetailEntry(label = "Source: ", text = animeDetailsModel.source)
+        DetailEntry(label = stringResource(R.string.label_status), text = animeDetailsModel.status)
+        DetailEntry(label = stringResource(R.string.label_duration), text = animeDetailsModel.duration)
+        DetailEntry(label = stringResource(R.string.label_source), text = animeDetailsModel.source)
         if (animeDetailsModel.openingThemes.isNotEmpty()) {
-            DetailHeader("Opening theme(s)")
+            DetailHeader(stringResource(R.string.label_opening_themes))
             animeDetailsModel.openingThemes.forEach {
                 ValueItem(text = it)
             }
         }
         if (animeDetailsModel.endingThemes.isNotEmpty()) {
-            DetailHeader(text = "Ending theme(s)")
+            DetailHeader(text = stringResource(R.string.label_ending_themes))
             animeDetailsModel.endingThemes.forEach {
                 ValueItem(text = it)
             }
         }
         if (animeDetailsModel.relatedMedia.isNotEmpty()) {
-            DetailHeader(text = "Related media")
+            DetailHeader(text = stringResource(R.string.header_related_media))
             animeDetailsModel.relatedMedia.forEach {
                 ValueItem(text = it)
             }

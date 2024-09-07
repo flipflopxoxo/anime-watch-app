@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_ongoing_anime">Ongoing Anime</string>
+    <string name="label_genres">"Genres: "</string>
+    <string name="label_themes">"Themes: "</string>
+    <string name="label_types">"Types: "</string>
+    <string name="label_episodes">"Episodes: "</string>
+    <string name="label_status">"Status: "</string>
+    <string name="label_duration">"Duration: "</string>
+    <string name="label_source">"Source: "</string>
+    <string name="label_opening_themes">Opening theme(s)</string>
+    <string name="label_ending_themes">Ending theme(s)</string>
+    <string name="header_related_media">Related media</string>
+</resources>

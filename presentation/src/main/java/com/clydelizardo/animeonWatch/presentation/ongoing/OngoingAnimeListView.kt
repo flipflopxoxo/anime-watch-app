@@ -17,8 +17,10 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.clydelizardo.animeonWatch.presentation.R
 import com.clydelizardo.animeonWatch.presentation.common.Action
 import com.clydelizardo.animeonWatch.presentation.common.ErrorView
 
@@ -46,12 +48,12 @@ fun OngoingAnimeListView(
                 Modifier
                     .fillMaxSize(),
         ) {
-            TopAppBar(title = { Text(text = "Ongoing Anime") })
+            TopAppBar(title = { Text(text = stringResource(R.string.title_ongoing_anime)) })
             LazyColumn(
                 modifier =
-                    Modifier
-                        .fillMaxWidth()
-                        .weight(1f),
+                Modifier
+                    .fillMaxWidth()
+                    .weight(1f),
             ) {
                 if (ongoingAnimeViewState.isLoading) {
                     item(key = "loading") {
