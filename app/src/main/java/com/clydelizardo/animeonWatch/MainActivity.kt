@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
             AnimeOnWatchTheme {
                 MainNavHost(
                     navController = rememberNavController(),
-                    startDestination = NavigationAction.OngoingAnime.path,
+                    startDestination = Navigation.OngoingAnime,
                 )
             }
         }

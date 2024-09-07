@@ -1,4 +1,4 @@
-package com.clydelizardo.animeonWatch.ongoing.presentation
+package com.clydelizardo.animeonWatch.presentation.ongoing
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border

@@ -1,4 +1,4 @@
-package com.clydelizardo.animeonWatch.details.presentation
+package com.clydelizardo.animeonWatch.presentation.details
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Box
@@ -28,7 +28,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import com.clydelizardo.animeonWatch.view.ErrorView
+import com.clydelizardo.animeonWatch.presentation.common.Action
+import com.clydelizardo.animeonWatch.presentation.common.ErrorView
 import com.clydelizardo.models.AnimeDetailsModel
 import com.clydelizardo.models.AnimeType
 import com.clydelizardo.models.ImageSource
@@ -69,13 +70,15 @@ fun AnimeDetailsPreview() {
 @Composable
 fun AnimeDetailsView(
     viewState: AnimeDetailsViewStateModel,
-    onNavigateUp: () -> Unit,
+    onAction: (Action) -> Unit,
 ) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         topBar = {
             TopAppBar(title = { Text(text = "Anime Details") }, navigationIcon = {
-                IconButton(onClick = onNavigateUp) {
+                IconButton(onClick = {
+                    onAction(Action.NavigateUp)
+                }) {
                     Icon(Icons.AutoMirrored.Filled.ArrowBack, "navigate up")
                 }
             })

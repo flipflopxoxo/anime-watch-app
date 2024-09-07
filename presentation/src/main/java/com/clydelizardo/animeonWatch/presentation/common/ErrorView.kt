@@ -1,4 +1,4 @@
-package com.clydelizardo.animeonWatch.view
+package com.clydelizardo.animeonWatch.presentation.common
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer

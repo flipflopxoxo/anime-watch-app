@@ -1,4 +1,4 @@
-package com.clydelizardo.animeonWatch.ongoing.presentation
+package com.clydelizardo.animeonWatch.presentation.ongoing
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Box
@@ -19,15 +19,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.clydelizardo.animeonWatch.NavigationAction
-import com.clydelizardo.animeonWatch.view.ErrorView
+import com.clydelizardo.animeonWatch.presentation.common.Action
+import com.clydelizardo.animeonWatch.presentation.common.ErrorView
 
 @Preview
 @Composable
 private fun OngoingAnimeListViewLoading() {
     OngoingAnimeListView(
         ongoingAnimeViewState = OngoingAnimeViewState(isLoading = true),
-        onNavigate = {},
+        onAction = {},
     )
 }
 
@@ -36,7 +36,7 @@ private fun OngoingAnimeListViewLoading() {
 @Composable
 fun OngoingAnimeListView(
     ongoingAnimeViewState: OngoingAnimeViewState,
-    onNavigate: (NavigationAction) -> Unit,
+    onAction: (Action) -> Unit,
 ) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
@@ -77,7 +77,7 @@ fun OngoingAnimeListView(
                     AnimeListItemView(
                         modifier = Modifier.padding(horizontal = 8.dp),
                         animeModel = animeModel,
-                        onClick = { onNavigate(NavigationAction.AnimeDetails(it.id)) },
+                        onClick = { onAction(OngoingAnimeListAction.ShowAnimeDetails(it.id)) },
                     )
                     HorizontalDivider()
                 }

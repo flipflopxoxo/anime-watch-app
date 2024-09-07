@@ -1,8 +1,9 @@
-package com.clydelizardo.animeonWatch.ongoing.presentation
+package com.clydelizardo.animeonWatch.presentation.details
 
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.clydelizardo.animeonWatch.domain.ongoing.GetOngoingAnimeUseCase
+import com.clydelizardo.animeonWatch.domain.details.GetAnimeDetailsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -11,12 +12,13 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class OngoingAnimeListViewModel
+class AnimeDetailsViewModel
     @Inject
     constructor(
-        private val getOngoingAnimeUseCase: GetOngoingAnimeUseCase,
+        val getAnimeDetailsUseCase: GetAnimeDetailsUseCase,
+        val savedStateHandle: SavedStateHandle,
     ) : ViewModel() {
-        private val _state = MutableStateFlow(OngoingAnimeViewState(isLoading = false))
+        private val _state = MutableStateFlow(AnimeDetailsViewStateModel())
         val state = _state.asStateFlow()
 
         init {
@@ -24,12 +26,12 @@ class OngoingAnimeListViewModel
                 _state.update {
                     it.copy(isLoading = true)
                 }
-                val result = getOngoingAnimeUseCase.invoke()
+                val result = getAnimeDetailsUseCase(savedStateHandle.get<Int>("id") ?: 0)
                 _state.update {
                     if (result.isSuccess) {
-                        it.copy(isLoading = false, animeList = result.getOrNull().orEmpty())
+                        it.copy(isLoading = false, animeDetails = result.getOrThrow())
                     } else {
-                        it.copy(isLoading = false, errorMessage = "Unable to load list")
+                        it.copy(isLoading = false, errorMessage = "Unable to get details")
                     }
                 }
             }

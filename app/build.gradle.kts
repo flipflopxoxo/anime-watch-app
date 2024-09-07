@@ -62,7 +62,6 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.hilt.navigation.compose)
-    implementation(libs.coil.compose)
 
     implementation(libs.kotlinx.coroutines.android)
 
@@ -70,13 +69,13 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.lifecycle.viewmodel.savedstate)
 
-    implementation(libs.retrofit2.retrofit)
-
     implementation(libs.hilt.android)
     implementation(project(":models"))
     implementation(project(":domain"))
     implementation(project(":network"))
     implementation(project(":data"))
+    implementation(project(":presentation"))
+
     kapt(libs.hilt.android.compiler)
 
     testImplementation(libs.junit)
