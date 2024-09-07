@@ -2,7 +2,7 @@ package com.clydelizardo.animeonWatch.details.presentation
 
 import androidx.lifecycle.SavedStateHandle
 import com.clydelizardo.animeonWatch.MainCoroutineRule
-import com.clydelizardo.animeonWatch.details.domain.GetAnimeDetailsUseCase
+import com.clydelizardo.animeonWatch.domain.details.GetAnimeDetailsUseCase
 import com.clydelizardo.models.AnimeDetailsModel
 import io.mockk.coEvery
 import io.mockk.coJustAwait

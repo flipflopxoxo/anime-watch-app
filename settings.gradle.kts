@@ -23,3 +23,4 @@ rootProject.name = "Anime On-Watch"
 include(":app")
 include(":models")
 include(":network")
+include(":domain")

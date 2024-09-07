@@ -1,7 +1,7 @@
 package com.clydelizardo.animeonWatch.ongoing.presentation
 
 import com.clydelizardo.animeonWatch.MainCoroutineRule
-import com.clydelizardo.animeonWatch.ongoing.domain.GetOngoingAnimeUseCase
+import com.clydelizardo.animeonWatch.domain.ongoing.GetOngoingAnimeUseCase
 import com.clydelizardo.models.AnimeModel
 import io.mockk.coEvery
 import io.mockk.coJustAwait

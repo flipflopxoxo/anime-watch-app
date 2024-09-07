@@ -1,6 +1,6 @@
 package com.clydelizardo.animeonWatch.details.data
 
-import com.clydelizardo.animeonWatch.details.domain.AnimeDetailsRepository
+import com.clydelizardo.animeonWatch.domain.details.AnimeDetailsRepository
 import com.clydelizardo.models.AnimeDetailsModel
 import org.openapitools.network.apis.AnimeApi
 import javax.inject.Inject

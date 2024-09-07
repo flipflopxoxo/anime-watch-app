@@ -1,6 +1,6 @@
 package com.clydelizardo.animeonWatch.ongoing.data
 
-import com.clydelizardo.animeonWatch.ongoing.domain.AnimeRepository
+import com.clydelizardo.animeonWatch.domain.ongoing.AnimeRepository
 import com.clydelizardo.models.AnimeModel
 import org.openapitools.network.apis.SeasonsApi
 import javax.inject.Inject

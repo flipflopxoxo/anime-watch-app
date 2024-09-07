@@ -1,6 +1,8 @@
 package com.clydelizardo.animeonWatch.details.domain
 
 import com.clydelizardo.animeonWatch.MainCoroutineRule
+import com.clydelizardo.animeonWatch.domain.details.AnimeDetailsRepository
+import com.clydelizardo.animeonWatch.domain.details.GetAnimeDetailsUseCaseImpl
 import com.clydelizardo.models.AnimeDetailsModel
 import io.mockk.coEvery
 import io.mockk.impl.annotations.MockK

@@ -3,7 +3,7 @@ package com.clydelizardo.animeonWatch.details.presentation
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.clydelizardo.animeonWatch.details.domain.GetAnimeDetailsUseCase
+import com.clydelizardo.animeonWatch.domain.details.GetAnimeDetailsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

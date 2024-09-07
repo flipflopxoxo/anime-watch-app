@@ -1,7 +1,7 @@
 package com.clydelizardo.animeonWatch.di
 
-import com.clydelizardo.animeonWatch.details.domain.GetAnimeDetailsUseCase
-import com.clydelizardo.animeonWatch.details.domain.GetAnimeDetailsUseCaseImpl
+import com.clydelizardo.animeonWatch.domain.details.GetAnimeDetailsUseCase
+import com.clydelizardo.animeonWatch.domain.details.GetAnimeDetailsUseCaseImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

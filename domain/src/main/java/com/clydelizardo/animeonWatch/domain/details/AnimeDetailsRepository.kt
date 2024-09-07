@@ -1,4 +1,4 @@
-package com.clydelizardo.animeonWatch.details.domain
+package com.clydelizardo.animeonWatch.domain.details
 
 import com.clydelizardo.models.AnimeDetailsModel
 

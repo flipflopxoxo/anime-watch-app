@@ -1,7 +1,7 @@
 package com.clydelizardo.animeonWatch.di
 
-import com.clydelizardo.animeonWatch.ongoing.domain.GetOngoingAnimeUseCase
-import com.clydelizardo.animeonWatch.ongoing.domain.GetOngoingAnimeUseCaseImpl
+import com.clydelizardo.animeonWatch.domain.ongoing.GetOngoingAnimeUseCase
+import com.clydelizardo.animeonWatch.domain.ongoing.GetOngoingAnimeUseCaseImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

@@ -2,7 +2,7 @@ package com.clydelizardo.animeonWatch.ongoing.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.clydelizardo.animeonWatch.ongoing.domain.GetOngoingAnimeUseCase
+import com.clydelizardo.animeonWatch.domain.ongoing.GetOngoingAnimeUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
