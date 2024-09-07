@@ -12,28 +12,26 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class AnimeDetailsViewModel
-    @Inject
-    constructor(
-        val getAnimeDetailsUseCase: GetAnimeDetailsUseCase,
-        val savedStateHandle: SavedStateHandle,
-    ) : ViewModel() {
-        private val _state = MutableStateFlow(AnimeDetailsViewStateModel())
-        val state = _state.asStateFlow()
+class AnimeDetailsViewModel @Inject constructor(
+    val getAnimeDetailsUseCase: GetAnimeDetailsUseCase,
+    val savedStateHandle: SavedStateHandle,
+) : ViewModel() {
+    private val _state = MutableStateFlow(AnimeDetailsViewStateModel())
+    val state = _state.asStateFlow()
 
-        init {
-            viewModelScope.launch {
-                _state.update {
-                    it.copy(isLoading = true)
-                }
-                val result = getAnimeDetailsUseCase(savedStateHandle.get<Int>("id") ?: 0)
-                _state.update {
-                    if (result.isSuccess) {
-                        it.copy(isLoading = false, animeDetails = result.getOrThrow())
-                    } else {
-                        it.copy(isLoading = false, errorMessage = "Unable to get details")
-                    }
+    init {
+        viewModelScope.launch {
+            _state.update {
+                it.copy(isLoading = true)
+            }
+            val result = getAnimeDetailsUseCase(savedStateHandle.get<Int>("id") ?: 0)
+            _state.update {
+                if (result.isSuccess) {
+                    it.copy(isLoading = false, animeDetails = result.getOrThrow())
+                } else {
+                    it.copy(isLoading = false, errorMessage = "Unable to get details")
                 }
             }
         }
     }
+}

@@ -11,27 +11,25 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class OngoingAnimeListViewModel
-    @Inject
-    constructor(
-        private val getOngoingAnimeUseCase: GetOngoingAnimeUseCase,
-    ) : ViewModel() {
-        private val _state = MutableStateFlow(OngoingAnimeViewState(isLoading = false))
-        val state = _state.asStateFlow()
+class OngoingAnimeListViewModel @Inject constructor(
+    private val getOngoingAnimeUseCase: GetOngoingAnimeUseCase,
+) : ViewModel() {
+    private val _state = MutableStateFlow(OngoingAnimeViewState(isLoading = false))
+    val state = _state.asStateFlow()
 
-        init {
-            viewModelScope.launch {
-                _state.update {
-                    it.copy(isLoading = true)
-                }
-                val result = getOngoingAnimeUseCase.invoke()
-                _state.update {
-                    if (result.isSuccess) {
-                        it.copy(isLoading = false, animeList = result.getOrNull().orEmpty())
-                    } else {
-                        it.copy(isLoading = false, errorMessage = "Unable to load list")
-                    }
+    init {
+        viewModelScope.launch {
+            _state.update {
+                it.copy(isLoading = true)
+            }
+            val result = getOngoingAnimeUseCase.invoke()
+            _state.update {
+                if (result.isSuccess) {
+                    it.copy(isLoading = false, animeList = result.getOrNull().orEmpty())
+                } else {
+                    it.copy(isLoading = false, errorMessage = "Unable to load list")
                 }
             }
         }
     }
+}
