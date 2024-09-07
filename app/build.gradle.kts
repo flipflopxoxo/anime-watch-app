@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.clydelizardo.animeon_watch"
+    namespace = "com.clydelizardo.animeonWatch"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.clydelizardo.animeon_watch"
+        applicationId = "com.clydelizardo.animeonWatch"
         minSdk = 26
         targetSdk = 34
         versionCode = 1
@@ -27,7 +27,7 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
     }
@@ -79,7 +79,7 @@ dependencies {
 
     testImplementation(libs.junit)
     testImplementation(libs.mockk)
-    testImplementation (libs.kotlinx.coroutines.test)
+    testImplementation(libs.kotlinx.coroutines.test)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
