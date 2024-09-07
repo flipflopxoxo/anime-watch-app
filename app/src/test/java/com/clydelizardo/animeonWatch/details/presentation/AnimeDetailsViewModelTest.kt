@@ -38,7 +38,7 @@ class AnimeDetailsViewModelTest {
         runTest {
             every { savedStateHandle.get<Int>("id") } returns 1
             coJustAwait { mockUseCase.invoke(any()) }
-            viewModel = AnimeDetailsViewModel(mockUseCase, savedStateHandle)
+            viewModel = AnimeDetailsViewModel(mockUseCase)
 
             Assert.assertEquals(AnimeDetailsViewStateModel(isLoading = true), viewModel.state.first())
         }
@@ -49,7 +49,7 @@ class AnimeDetailsViewModelTest {
             every { savedStateHandle.get<Int>("id") } returns 1
             val value = mockk<AnimeDetailsModel>()
             coEvery { mockUseCase.invoke(any()) } returns Result.success(value)
-            viewModel = AnimeDetailsViewModel(mockUseCase, savedStateHandle)
+            viewModel = AnimeDetailsViewModel(mockUseCase)
 
             Assert.assertEquals(AnimeDetailsViewStateModel(animeDetails = value), viewModel.state.first())
         }
@@ -59,7 +59,7 @@ class AnimeDetailsViewModelTest {
         runTest {
             every { savedStateHandle.get<Int>("id") } returns 1
             coEvery { mockUseCase.invoke(any()) } returns Result.failure(mockk())
-            viewModel = AnimeDetailsViewModel(mockUseCase, savedStateHandle)
+            viewModel = AnimeDetailsViewModel(mockUseCase)
 
             Assert.assertEquals(AnimeDetailsViewStateModel(errorMessage = "Unable to get details"), viewModel.state.first())
         }
