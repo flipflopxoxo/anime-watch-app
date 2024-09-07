@@ -73,7 +73,7 @@ dependencies {
     implementation(libs.retrofit2.retrofit)
 
     implementation(libs.hilt.android)
-    implementation(project(":domain"))
+    implementation(project(":models"))
     implementation(project(":network"))
     kapt(libs.hilt.android.compiler)
 

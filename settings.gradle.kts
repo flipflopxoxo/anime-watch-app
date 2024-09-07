@@ -21,5 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Anime On-Watch"
 include(":app")
-include(":domain")
+include(":models")
 include(":network")
