@@ -1,7 +1,6 @@
 package com.clydelizardo.animeonWatch.data.mapper
 
 import com.clydelizardo.models.AnimeDetailsModel
-import com.clydelizardo.models.AnimeType
 import com.clydelizardo.models.ImageSource
 import org.openapitools.network.models.AnimeFull
 import org.openapitools.network.models.AnimeImagesJpg
@@ -40,16 +39,6 @@ class AnimeFullToAnimeDetailsModelMapper @Inject constructor(
             ?.flatMap { relation ->
                 relation.entry?.map { "${relation.relation} - ${it.name} ${it.type}" }.orEmpty()
             }.orEmpty()
-
-    private fun mapAnimeType(type: AnimeFull.Type) =
-        when (type) {
-            AnimeFull.Type.TV -> AnimeType.TV
-            AnimeFull.Type.OVA -> AnimeType.OVA
-            AnimeFull.Type.Movie -> AnimeType.Movie
-            AnimeFull.Type.Special -> AnimeType.Special
-            AnimeFull.Type.ONA -> AnimeType.ONA
-            AnimeFull.Type.Music -> AnimeType.Music
-        }
 
     private fun AnimeFull.findTitleByType(type: String): String =
         titles?.firstOrNull { it.type == type }?.title ?: ""
