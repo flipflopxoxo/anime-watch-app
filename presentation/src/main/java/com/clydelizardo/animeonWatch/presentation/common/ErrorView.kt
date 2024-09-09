@@ -13,7 +13,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 
 @Preview
 @Composable
@@ -34,9 +33,9 @@ fun ErrorView(
             Icons.Outlined.Warning,
             contentDescription = null,
             tint = MaterialTheme.colorScheme.error,
-            modifier = Modifier.size(64.dp),
+            modifier = Modifier.size(ViewConstants.ErrorViewImageSize),
         )
-        Spacer(modifier = Modifier.height(8.dp))
+        Spacer(modifier = Modifier.height(ViewConstants.ErrorViewSpacing))
         Text(text = message)
     }
 }

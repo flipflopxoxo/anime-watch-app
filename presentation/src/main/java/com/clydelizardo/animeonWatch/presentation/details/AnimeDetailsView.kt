@@ -27,11 +27,11 @@ import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.clydelizardo.animeonWatch.presentation.R
 import com.clydelizardo.animeonWatch.presentation.common.Action
 import com.clydelizardo.animeonWatch.presentation.common.ErrorView
+import com.clydelizardo.animeonWatch.presentation.common.ViewConstants
 import com.clydelizardo.models.AnimeDetailsModel
 import com.clydelizardo.models.AnimeType
 import com.clydelizardo.models.ImageSource
@@ -121,12 +121,12 @@ private fun AnimeDetailsContent(animeDetailsModel: AnimeDetailsModel) {
             .verticalScroll(rememberScrollState()),
     ) {
         Text(
-            modifier = Modifier.padding(8.dp),
+            modifier = Modifier.padding(ViewConstants.DetailContentPadding),
             text = animeDetailsModel.titleEnglish,
             style = MaterialTheme.typography.headlineMedium,
         )
         Text(
-            modifier = Modifier.padding(start = 8.dp, end = 8.dp, bottom = 4.dp),
+            modifier = Modifier.padding(ViewConstants.DetailContentPadding),
             text = animeDetailsModel.titleJapanese,
             style = MaterialTheme.typography.titleSmall,
         )
@@ -169,7 +169,7 @@ private fun AnimeDetailsContent(animeDetailsModel: AnimeDetailsModel) {
 @Composable
 private fun ValueItem(text: String) {
     Text(
-        modifier = Modifier.padding(top = 6.dp, start = 8.dp, end = 8.dp),
+        modifier = Modifier.padding(ViewConstants.DetailEntryValuePadding),
         text = text,
     )
 }
@@ -177,7 +177,7 @@ private fun ValueItem(text: String) {
 @Composable
 private fun DetailHeader(text: String) {
     Text(
-        modifier = Modifier.padding(top = 12.dp, start = 8.dp, end = 8.dp),
+        modifier = Modifier.padding(ViewConstants.DetailHeaderPadding),
         text = text,
         fontWeight = FontWeight.Bold,
     )
@@ -189,7 +189,7 @@ private fun DetailEntry(
     text: String,
 ) {
     Text(
-        modifier = Modifier.padding(top = 8.dp, start = 8.dp, end = 8.dp),
+        modifier = Modifier.padding(ViewConstants.DetailEntryPadding),
         text =
             AnnotatedString(
                 label.orEmpty(),

@@ -11,4 +11,5 @@
     <string name="label_opening_themes">Opening theme(s)</string>
     <string name="label_ending_themes">Ending theme(s)</string>
     <string name="header_related_media">Related media</string>
+    <string name="details_episodes_info_format">" episodes - "</string>
 </resources>

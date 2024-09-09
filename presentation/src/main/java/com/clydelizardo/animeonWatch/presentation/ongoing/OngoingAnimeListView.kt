@@ -19,10 +19,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import com.clydelizardo.animeonWatch.presentation.R
 import com.clydelizardo.animeonWatch.presentation.common.Action
 import com.clydelizardo.animeonWatch.presentation.common.ErrorView
+import com.clydelizardo.animeonWatch.presentation.common.ViewConstants
 
 @Preview
 @Composable
@@ -77,7 +77,7 @@ fun OngoingAnimeListView(
                 }
                 items(items = ongoingAnimeViewState.animeList, key = { it.id }) { animeModel ->
                     AnimeListItemView(
-                        modifier = Modifier.padding(horizontal = 8.dp),
+                        modifier = Modifier.padding(ViewConstants.ListEntrySpacing),
                         animeModel = animeModel,
                         onClick = { onAction(OngoingAnimeListAction.ShowAnimeDetails(it.id)) },
                     )

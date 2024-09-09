@@ -42,6 +42,7 @@ android {
 
 dependencies {
     testImplementation(project(":common"))
+    debugImplementation(libs.ui.tooling)
     kapt(libs.hilt.android.compiler)
 
     implementation(libs.androidx.activity.compose)
