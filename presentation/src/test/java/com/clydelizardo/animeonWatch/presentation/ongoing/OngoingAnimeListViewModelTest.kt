@@ -8,7 +8,9 @@ import io.mockk.coJustAwait
 import io.mockk.impl.annotations.MockK
 import io.mockk.junit4.MockKRule
 import io.mockk.mockk
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.test.UnconfinedTestDispatcher
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert
 import org.junit.Rule
@@ -18,8 +20,9 @@ class OngoingAnimeListViewModelTest {
     @get:Rule
     val mockKRule = MockKRule(this)
 
+    @OptIn(ExperimentalCoroutinesApi::class)
     @get:Rule
-    val mainCoroutineRule = MainCoroutineRule()
+    val mainCoroutineRule = MainCoroutineRule(dispatcher = UnconfinedTestDispatcher())
 
     lateinit var viewModel: OngoingAnimeListViewModel
 
@@ -32,6 +35,7 @@ class OngoingAnimeListViewModelTest {
             coJustAwait { mockUseCase.invoke() }
 
             viewModel = OngoingAnimeListViewModel(mockUseCase)
+            viewModel.handleAction(OngoingAnimeListViewAction.LoadOngoingAnimeList)
 
             Assert.assertEquals(OngoingAnimeViewState(isLoading = true), viewModel.state.first())
         }
@@ -43,6 +47,7 @@ class OngoingAnimeListViewModelTest {
             coEvery { mockUseCase.invoke() } returns Result.success(value)
 
             viewModel = OngoingAnimeListViewModel(mockUseCase)
+            viewModel.handleAction(OngoingAnimeListViewAction.LoadOngoingAnimeList)
 
             Assert.assertEquals(
                 OngoingAnimeViewState(isLoading = false, animeList = value),
@@ -56,6 +61,7 @@ class OngoingAnimeListViewModelTest {
             coEvery { mockUseCase.invoke() } returns Result.failure(mockk())
 
             viewModel = OngoingAnimeListViewModel(mockUseCase)
+            viewModel.handleAction(OngoingAnimeListViewAction.LoadOngoingAnimeList)
 
             Assert.assertEquals(
                 OngoingAnimeViewState(

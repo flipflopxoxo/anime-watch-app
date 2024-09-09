@@ -1,7 +1,5 @@
-package com.clydelizardo.animeonWatch.details.domain
+package com.clydelizardo.animeonWatch.domain.details
 
-import com.clydelizardo.animeonWatch.domain.details.AnimeDetailsRepository
-import com.clydelizardo.animeonWatch.domain.details.GetAnimeDetailsUseCaseImpl
 import com.clydelizardo.common.MainCoroutineRule
 import com.clydelizardo.models.AnimeDetailsModel
 import io.mockk.coEvery
@@ -9,7 +7,7 @@ import io.mockk.impl.annotations.MockK
 import io.mockk.junit4.MockKRule
 import io.mockk.mockk
 import kotlinx.coroutines.test.runTest
-import org.junit.Assert.assertEquals
+import org.junit.Assert
 import org.junit.Rule
 import org.junit.Test
 
@@ -34,7 +32,7 @@ class GetAnimeDetailsUseCaseImplTest {
             getAnimeDetailsUseCaseImpl = GetAnimeDetailsUseCaseImpl(mockRepository)
 
             val result = getAnimeDetailsUseCaseImpl.invoke(1)
-            assertEquals(Result.success(successValue), result)
+            Assert.assertEquals(Result.success(successValue), result)
         }
 
     @Test
@@ -46,6 +44,6 @@ class GetAnimeDetailsUseCaseImplTest {
             getAnimeDetailsUseCaseImpl = GetAnimeDetailsUseCaseImpl(mockRepository)
 
             val result = getAnimeDetailsUseCaseImpl.invoke(1)
-            assertEquals(Result.failure<AnimeDetailsModel>(failureException), result)
+            Assert.assertEquals(Result.failure<AnimeDetailsModel>(failureException), result)
         }
 }
