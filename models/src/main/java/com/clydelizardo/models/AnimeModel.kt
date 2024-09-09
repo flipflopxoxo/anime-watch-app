@@ -20,4 +20,5 @@ enum class AnimeType(
     Special("Special"),
     ONA("ONA"),
     Music("Music"),
+    Unknown("Unknown"),
 }

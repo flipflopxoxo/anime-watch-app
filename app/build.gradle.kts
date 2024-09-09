@@ -75,6 +75,7 @@ dependencies {
     implementation(project(":network"))
     implementation(project(":data"))
     implementation(project(":presentation"))
+    testImplementation(project(":common"))
 
     kapt(libs.hilt.android.compiler)
 

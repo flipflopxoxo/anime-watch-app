@@ -41,6 +41,7 @@ android {
 }
 
 dependencies {
+    testImplementation(project(":common"))
     kapt(libs.hilt.android.compiler)
 
     implementation(libs.androidx.activity.compose)
@@ -58,6 +59,9 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":models"))
     testImplementation(libs.junit)
+    testImplementation(libs.junit)
+    testImplementation(libs.mockk)
+    testImplementation(libs.kotlinx.coroutines.test)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))

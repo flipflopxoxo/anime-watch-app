@@ -36,6 +36,9 @@ dependencies {
     implementation(libs.hilt.android)
     implementation(project(":models"))
     testImplementation(libs.junit)
+    testImplementation(libs.mockk)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(project(":common"))
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }

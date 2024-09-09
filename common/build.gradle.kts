@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.clydelizardo.animeonWatch.data"
+    namespace = "com.clydelizardo.common"
     compileSdk = 34
 
     defaultConfig {
@@ -19,7 +19,7 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro",
+                "proguard-rules.pro"
             )
         }
     }
@@ -33,16 +33,7 @@ android {
 }
 
 dependencies {
-    implementation(libs.hilt.android)
-    implementation(project(":domain"))
-    implementation(project(":network"))
-    implementation(project(":models"))
-
-    testImplementation(libs.junit)
-    testImplementation(libs.mockk)
-    testImplementation(libs.kotlinx.coroutines.test)
-    testImplementation(project(":common"))
-    testImplementation(project(":common"))
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.junit)
+    implementation(libs.mockk)
+    implementation(libs.kotlinx.coroutines.test)
 }
