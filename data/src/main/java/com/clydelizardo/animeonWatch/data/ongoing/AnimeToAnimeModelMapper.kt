@@ -1,5 +1,6 @@
 package com.clydelizardo.animeonWatch.data.ongoing
 
+import com.clydelizardo.animeonWatch.data.common.DataConstants
 import com.clydelizardo.animeonWatch.data.mapper.ApiAnimeTypeToAnimeTypeMapper
 import com.clydelizardo.models.AnimeModel
 import com.clydelizardo.models.ImageSource
@@ -15,7 +16,7 @@ class AnimeToAnimeModelMapper @Inject constructor(
             name =
             anime.titles
                 ?.first {
-                    it.type == "English"
+                    it.type == DataConstants.TITLE_TYPE_ENGLISH
                 }?.title
                 .orEmpty(),
             genres = anime.genres?.mapNotNull { it.name }.orEmpty(),

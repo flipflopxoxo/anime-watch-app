@@ -12,4 +12,6 @@
     <string name="label_ending_themes">Ending theme(s)</string>
     <string name="header_related_media">Related media</string>
     <string name="details_episodes_info_format">" episodes - "</string>
+    <string name="title_anime_details">Anime Details</string>
+    <string name="content_description_navigate_up">navigate up</string>
 </resources>

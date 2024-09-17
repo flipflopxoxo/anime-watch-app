@@ -1,5 +1,6 @@
 package com.clydelizardo.animeonWatch.data.mapper
 
+import com.clydelizardo.animeonWatch.data.common.DataConstants
 import com.clydelizardo.models.AnimeDetailsModel
 import com.clydelizardo.models.ImageSource
 import org.openapitools.network.models.AnimeFull
@@ -12,8 +13,8 @@ class AnimeFullToAnimeDetailsModelMapper @Inject constructor(
     fun map(animeFull: AnimeFull): AnimeDetailsModel =
         AnimeDetailsModel(
             id = animeFull.malId ?: -1,
-            titleEnglish = animeFull.findTitleByType("English"),
-            titleJapanese = animeFull.findTitleByType("Japanese"),
+            titleEnglish = animeFull.findTitleByType(DataConstants.TITLE_TYPE_ENGLISH),
+            titleJapanese = animeFull.findTitleByType(DataConstants.TITLE_TYPE_JAPANESE),
             genres = animeFull.genres?.mapNotNull { it.name }.orEmpty(),
             themes = animeFull.themes?.mapNotNull { it.name }.orEmpty(),
             type = animeTypeMapper.map(animeFull.type),

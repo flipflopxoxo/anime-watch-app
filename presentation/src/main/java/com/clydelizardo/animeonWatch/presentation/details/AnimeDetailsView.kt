@@ -77,11 +77,12 @@ fun AnimeDetailsView(
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         topBar = {
-            TopAppBar(title = { Text(text = "Anime Details") }, navigationIcon = {
+            TopAppBar(title = { Text(text = stringResource(R.string.title_anime_details)) }, navigationIcon = {
                 IconButton(onClick = {
                     onAction(Action.NavigateUp)
                 }) {
-                    Icon(Icons.AutoMirrored.Filled.ArrowBack, "navigate up")
+                    Icon(Icons.AutoMirrored.Filled.ArrowBack,
+                        stringResource(R.string.content_description_navigate_up))
                 }
             })
         },
