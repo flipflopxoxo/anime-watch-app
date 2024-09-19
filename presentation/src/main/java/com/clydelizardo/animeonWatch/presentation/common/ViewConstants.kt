@@ -11,7 +11,6 @@ object ViewConstants {
     val ListItemGenresEntryBackgroundBorder = 1.dp
     val ListItemGenresEntryBackgroundCornerRadius = 6.dp
     val ListItemDurationPadding = PaddingValues(vertical = 4.dp)
-    val ListItemImagePadding = PaddingValues(8.dp)
     val ListItemImageAspectRatio = 0.707f
     val ListEntrySpacing = PaddingValues(horizontal = 8.dp)
 

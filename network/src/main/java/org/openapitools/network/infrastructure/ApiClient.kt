@@ -59,26 +59,6 @@ class ApiClient(
         normalizeBaseUrl()
     }
 
-    /**
-     * Adds an authorization to be used by the client
-     * @param authName Authentication name
-     * @param authorization Authorization interceptor
-     * @return ApiClient
-     */
-    fun addAuthorization(authName: String, authorization: Interceptor): ApiClient {
-        if (apiAuthorizations.containsKey(authName)) {
-            throw RuntimeException("auth name $authName already in api authorizations")
-        }
-        apiAuthorizations[authName] = authorization
-        clientBuilder.addInterceptor(authorization)
-        return this
-    }
-
-    fun setLogger(logger: (String) -> Unit): ApiClient {
-        this.logger = logger
-        return this
-    }
-
     fun <S> createService(serviceClass: Class<S>): S {
         val usedCallFactory = this.callFactory ?: clientBuilder.build()
         return retrofitBuilder.callFactory(usedCallFactory).build().create(serviceClass)
@@ -87,15 +67,6 @@ class ApiClient(
     private fun normalizeBaseUrl() {
         if (!baseUrl.endsWith("/")) {
             baseUrl += "/"
-        }
-    }
-
-    private inline fun <T, reified U> Iterable<T>.runOnFirst(callback: U.() -> Unit) {
-        for (element in this) {
-            if (element is U) {
-                callback.invoke(element)
-                break
-            }
         }
     }
 
